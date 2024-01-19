@@ -127,79 +127,79 @@ switch animal {
 
 ## Operators
 
-// addition
+addition
 ```
 1 + 2
 ```
 
-// substraction
+substraction
 ```
 2 - 1
 ```
 
-// multiplication
+multiplication
 ```
 3 * 2
 ```
 
-// division
+division
 ```
 5 / 2
 ```
 
-// exponent
+exponent
 ```
 2 ** 6
 ```
 
-// modulo
+modulo
 ```
 10 % 4
 ```
 
-// move bit left
+move bit left
 ```
 1 << 4
 ```
 
-// move bit right
+move bit right
 ```
 6 >> 1
 ```
 
-// equality
+equality
 ```
 1 == 1 // always strict inequality
 ```
 
-// less than
+less than
 ```
 1 < 2
 ```
 
-// greater than
+greater than
 ```
 1 > 0
 ```
 
-// less than or equal to
+less than or equal to
 ```
 5 <= 6
 5 <= 5
 ```
 
-// greater than or equal to
+greater than or equal to
 ```
 7 >= 4
 7 >= 7
 ```
 
-// inclusive range
+inclusive range
 ```
 1...5 // = [1, 2, 3, 4, 5]
 ```
 
-// exclusive range
+exclusive range
 ```
 1..<5 // = [1, 2, 3, 4]
 ```
