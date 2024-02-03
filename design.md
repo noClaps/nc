@@ -42,7 +42,7 @@ b = 3 // Works!
 ```
 [return type] [name]( [type] [arg], [type] [arg], ... ) {
 	// Arguments are immutable
-    // Any variables declared inside are scoped to the function
+  // Any variables declared inside are scoped to the function
 }
 ```
 
@@ -62,20 +62,7 @@ print(hello)
 ```
 
 # Loops
-`i` is scoped to the loop and will not be available outside.
-
-For loops:
-```
-for i in 1...20 {
-	// i = 1, 2, 3, 4, 5, ..., 20
-}
-
-for i in 1..<20 {
-	// i = 1, 2, 3, 4, 5, ..., 19
-}
-
-// `i` is not available here.
-```
+There are no `for` loops. While loops have effectively the same implementation as for loops, and are much more powerful and versatile.
 
 While loops:
 ```
@@ -130,6 +117,7 @@ switch animal {
 addition
 ```
 1 + 2
+// Also used for string and list concatenation
 ```
 
 substraction
@@ -169,7 +157,7 @@ move bit right
 
 equality
 ```
-1 == 1 // always strict inequality
+1 == 1 // always strict equality
 ```
 
 less than
@@ -192,14 +180,4 @@ greater than or equal to
 ```
 7 >= 4
 7 >= 7
-```
-
-inclusive range
-```
-1...5 // = [1, 2, 3, 4, 5]
-```
-
-exclusive range
-```
-1..<5 // = [1, 2, 3, 4]
 ```
