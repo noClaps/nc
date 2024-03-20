@@ -62,7 +62,17 @@ print(hello)
 ```
 
 # Loops
-There are no `for` loops. While loops have effectively the same implementation as for loops, and are much more powerful and versatile.
+
+For loops:
+```
+for i in 1:20 {
+	print(i) // Prints 1, 2, 3, ..., 20
+}
+
+for j in 1:2:20 { // You can increment/decrement by other values
+	print(j) // Prints 1, 3, 5, ..., 19
+}
+```
 
 While loops:
 ```
