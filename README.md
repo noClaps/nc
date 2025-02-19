@@ -4,4 +4,4 @@ This is a language that I'm working on. It takes inspiration from multiple langu
 
 As of now, I don't plan on using the language for anything more than basic scripting. I might extend the compiler to compile to other languages, as well as create more libraries to extend functionality, but I want the language itself to be simple.
 
-The language design is documented [here](https://docs.zerolimits.dev/nc/design).
+The language design is documented [here](./docs/design.md).
