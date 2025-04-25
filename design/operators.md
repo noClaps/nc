@@ -1,0 +1,217 @@
+# Operators
+
+All operators (except the pipe operator) will require its arguments to be of the same type. So, it will not be possible to add an `int` to a `float` without first converting one or the other to the respective type.
+
+## Logical
+
+```
+// and
+true && true // true
+true && false // false
+false && false // false
+```
+
+```
+// or
+true || true // true
+true || false // true
+false || false // false
+```
+
+```
+// not
+!true // false
+!false // true
+```
+
+## Concatenation
+
+Because strings are arrays of characters, the concatenation operator is the same for both. This operator can only apply to arrays and strings, it will error if used with any other type.
+
+```
+[a, b, c] <> [d, e, f] == [a, b, c, d, e, f]
+```
+
+```
+"Hello" <> " " <> "world" == "Hello world"
+```
+
+You can also use the concatenation operator between maps, provided that they are of the same type:
+
+```
+[string]int monthsToNum1 = {"jan": 1, "feb": 2, "mar": 3}
+[string]int monthsToNum2 = {"apr": 4, "may": 5, "jun": 6}
+[string]int monthsToNum3 = {"jul": 7, "aug": 8, "sep": 9}
+[string]int monthsToNum4 = {"oct": 10, "nov": 11, "dec": 12}
+
+[string]int monthsToNum = monthsToNum1 <> monthsToNum2 <> monthsToNum3 <> monthsToNum4
+// {"jan": 1, "feb": 2, "mar": 3, "apr": 4, ... , "dec": 12}
+
+[string]decimal differentType = {"new": 13d}
+monthsToNum <> differentType // error: cannot concatenate maps of different types
+```
+
+## Arithmetic
+
+```
+// addition
+1 + 2 == 3
+```
+
+```
+// substraction
+2 - 1 == 1
+```
+
+```
+// division
+5 / 2 == 2
+5.0 / 2.0 == 2.5
+```
+
+```
+// exponent
+2 ** 6 == 64
+```
+
+```
+// modulo
+10 % 4 == 2
+```
+
+### Multiplication
+
+Multiplication is apparently a very difficult problem to try and solve. Luckily, a lot of smart people have already solved the problem of multiplying large numbers efficiently. We can use something similar to implementations in other languages, as detailed in [this video](https://www.youtube.com/watch?v=AMl6EJHfUWo), though it's also worth exploring some of the newer algorithms to see if they're performant enough to be worth implementing.
+
+::: info NOTE
+In case the video gets taken down, my main takeaway from that video was to use normal long multiplication for smaller numbers ($O(n^2)$), and Karatsuba's algorithm ($O(n^{\log_2 3})$) for larger ones. There are also the Toom-Cook ($O(n^\frac{\log(2k-1)}{\log k}) \text{ for any } k \ge 2$) and Schönhage-Strassen ($O(n \log n \log \log n)$) algorithms which are more efficient, though likely with some tradeoffs.
+
+The more modern/complex algorithms are Fürer ($O(n \log n \cdot 2^{\Theta(\log^* n)})$) and Harvey-Hoeven ($O(n \log n)$). These are theoretically the most efficient algorithms, though it seems like their constants are simply too large to be feasible.
+:::
+
+The combination of algorithms being used for multiplication, as well as the thresholds at which the switch from one algorithm to another, will need to be explored and tested to find the best combinations.
+
+The syntax will be similar to other languages, no surprises there:
+
+```
+3 * 2
+```
+
+## Comparisons
+
+```
+// equality
+1 == 1
+```
+
+```
+// inequality
+1 != 2
+```
+
+```
+// less than
+1 < 2
+```
+
+```
+// greater than
+1 > 0
+```
+
+```
+// less than or equal to
+5 <= 6
+5 <= 5
+```
+
+```
+// greater than or equal to
+7 >= 4
+7 >= 7
+```
+
+## Bit arithmetic
+
+Bit arithmetic will only be allowed for integers.
+
+```
+// bit shift left
+1 << 4 == 16
+```
+
+```
+// bit shift right
+6 >> 1 == 3
+```
+
+```
+// bitwise and
+27 & 1 == 1
+```
+
+```
+// bitwise or
+8 | 1 == 9
+```
+
+```
+// bitwise xor
+12 ^ 1 == 13
+```
+
+```
+// bitwise not
+~6 == -7
+```
+
+## Pipes
+
+Similar to functional programming, we can use a `|>` pipe operator to pass values from one function to the next. This will automatically fill in the first value of the receiving function with the value being passed into it. For example, something like this:
+
+```
+fn square(int[] numbers) -> int[] {
+  mut int[] numbers = numbers
+
+  for i in numbers {
+    numbers[i] = numbers[i] ** 2
+  }
+
+  return numbers
+}
+
+fn addToAll(int[] numbers, int adding) -> int[] {
+  mut int[] numbers = numbers
+
+  for i in numbers {
+    numbers[i] += adding
+  }
+
+  return numbers
+}
+
+mut int[] numbers = [1, 2, 3, 4, 5]
+numbers = square(numbers) // [1, 4, 9, 16, 25]
+numbers = addToAll(numbers, 5) // [6, 10, 15, 21, 30]
+```
+
+can be turned into a pipeline, like so:
+
+```
+// Same function definitions as above
+
+int[] numbers = [1, 2, 3, 4, 5]
+                  |> square()
+                  |> addToAll(5)
+```
+
+While this may seem pointless for a simple case like this, it becomes incredibly helpful for situations where a piece of data needs to be passed around a lot. For example:
+
+```
+// Some data to be transformed
+DataStruct[] newData = data
+                         |> map(someFn)
+                         |> filter(someFilter)
+                         |> sort(someSort)
+                         |> take(10) // Take the first 10 values
+```
