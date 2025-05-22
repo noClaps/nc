@@ -39,15 +39,15 @@ Because strings are arrays of characters, the concatenation operator is the same
 You can also use the concatenation operator between maps, provided that they are of the same type:
 
 ```
-[string]int monthsToNum1 = {"jan": 1, "feb": 2, "mar": 3}
-[string]int monthsToNum2 = {"apr": 4, "may": 5, "jun": 6}
-[string]int monthsToNum3 = {"jul": 7, "aug": 8, "sep": 9}
-[string]int monthsToNum4 = {"oct": 10, "nov": 11, "dec": 12}
+[str]int monthsToNum1 = {"jan": 1, "feb": 2, "mar": 3}
+[str]int monthsToNum2 = {"apr": 4, "may": 5, "jun": 6}
+[str]int monthsToNum3 = {"jul": 7, "aug": 8, "sep": 9}
+[str]int monthsToNum4 = {"oct": 10, "nov": 11, "dec": 12}
 
-[string]int monthsToNum = monthsToNum1 <> monthsToNum2 <> monthsToNum3 <> monthsToNum4
+[str]int monthsToNum = monthsToNum1 <> monthsToNum2 <> monthsToNum3 <> monthsToNum4
 // {"jan": 1, "feb": 2, "mar": 3, "apr": 4, ... , "dec": 12}
 
-[string]decimal differentType = {"new": 13d}
+[str]decimal differentType = {"new": 13d}
 monthsToNum <> differentType // error: cannot concatenate maps of different types
 ```
 

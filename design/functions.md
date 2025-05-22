@@ -12,7 +12,7 @@ fn <name>( <type> arg1, <type> arg2, ... ) -> <return type> {
 Example function:
 
 ```
-fn hello(int a, int b) -> string {
+fn hello(int a, int b) -> str {
   a = 2 // Error
   mut int b = b // Creates new scoped variable `b`, let's call it `bscope`.
   b = 2 // This will edit `bscope`, not the argument value `b`
@@ -21,7 +21,7 @@ fn hello(int a, int b) -> string {
 }
 // `bscope` is not available here
 
-string hello = hello(a, b) // pass in `int a` and `int b` from above
+str hello = hello(a, b) // pass in `int a` and `int b` from above
 print(hello)
 ```
 
@@ -37,15 +37,15 @@ fn addA = add(1) // Partially applied function. `addA` now has the `int a` param
 int c = addA(2) // 3
 ```
 
-This can be useful to create functions from a base "template" function. For example, if you were creating an HTML library, you might use a function `el(string tag, string content)` as a base, and build all of your elements off of that:
+This can be useful to create functions from a base "template" function. For example, if you were creating an HTML library, you might use a function `el(str tag, str content)` as a base, and build all of your elements off of that:
 
 ```
-fn el(string tag, string content) -> string {
+fn el(str tag, str content) -> str {
   return "<{tag}>{content}</{tag}>"
 }
 
-fn html = el("html") // fn html(string content) -> string
-fn body = el("body") // fn body(string content) -> string
+fn html = el("html") // fn html(str content) -> str
+fn body = el("body") // fn body(str content) -> str
 // ...
 
 body("Hello World") // <body>Hello World</body>

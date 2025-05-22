@@ -82,8 +82,8 @@ int[] fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 int[] fib5 = fibonacci[0:4] // [0, 1, 1, 2, 3]
 int[] fibEven = fibonacci[0:2:fibonacci.len-1] // [0, 1, 3, 8, 21, 55]
 
-string helloWorld = "Hello World"
-string hello = helloWorld[0:4] // "Hello"
+str helloWorld = "Hello World"
+str hello = helloWorld[0:4] // "Hello"
 ```
 
 You can also use ranges to quickly reverse arrays or strings:
@@ -92,8 +92,8 @@ You can also use ranges to quickly reverse arrays or strings:
 int[] nums = [1, 2, 3, 4, 5]
 int[] reversedNums = nums[nums.len-1:-1:0] // [5, 4, 3, 2, 1]
 
-string hello = "Hello"
-string reversedHello = hello[hello.len-1:-1:0] // "olleH"
+str hello = "Hello"
+str reversedHello = hello[hello.len-1:-1:0] // "olleH"
 ```
 
 When using ranges to get a slice, you cannot have negative values, and this will throw an error. Negative indexing is only allowed when accessing a single value.
@@ -298,7 +298,7 @@ The length of the array can be accessed with `<array>.len`.
 Maps are similar to arrays except that you can have a custom key type, instead of it being an integer. The syntax for declaring a map is `[<key type>]<value type>`. So, for example, a map with a string key and a decimal value would be declared as:
 
 ```
-[string]decimal myMap = {
+[str]decimal myMap = {
   "string1": 1d,
   "string2": 2d,
   // ...
@@ -315,7 +315,7 @@ myMap["string5"] // 5d
 If the map is mutable, you can write to the map using the same syntax:
 
 ```
-mut [string]decimal myMap = {
+mut [str]decimal myMap = {
   // same as above
 }
 
@@ -346,7 +346,7 @@ Maps are implemented using [Swiss tables](https://abseil.io/about/design/swissta
 Maps differ from objects in that they don't have methods, but you can use [functions as values](#functions-as-values) to store functions in a map:
 
 ```
-[string](fn(int, int) -> int) myFunctionMap = {
+[str](fn(int, int) -> int) myFunctionMap = {
   "add": fn(int a, int b) -> int { return a + b }
   "multiply": fn(int a, int b) -> int { return a * b }
   // ...
@@ -364,7 +364,7 @@ Strings are defined as an [array](#arrays) of characters. Of course, this is all
 Characters are a single UTF-8 rune, represented by the `char` type. This means that characters that take up multiple bytes, like emojis or CJK characters. The benefit of this is that, if you're trying to access a character, you will get the full character you expect, even if it spans multiple bytes.
 
 ```
-string myString = "cookie 🍪"
+str myString = "cookie 🍪"
 
 for i in myString {
   print(myString[i])
@@ -395,11 +395,11 @@ print("This is an escaped string with an expression inside: \{5 + 2}")
 // This is an escaped string with an expression inside: {5 + 2}
 ```
 
-All values are converted to strings using the `string()` function when passed into a format string. If you'd like to use your own format, you can convert your value to a string yourself before passing it into the format string. For example:
+All values are converted to strings using the `str()` function when passed into a format string. If you'd like to use your own format, you can convert your value to a string yourself before passing it into the format string. For example:
 
 ```
-fn intToDeciamlStr(int a) -> string {
-  return string(decimal(a))
+fn intToDeciamlStr(int a) -> str {
+  return str(decimal(a))
 }
 
 print("My number is {intToDecimalStr(10)}")
@@ -452,7 +452,7 @@ Since optional values are technically a superset of regular values, you can pass
 int? num1 = 7 // this is okay
 int num2 = undefined // error: cannot assign undefined to a non-optional value
 
-fn myFunction(string? arg1, string arg2) {
+fn myFunction(str? arg1, str arg2) {
   // some implementation...
 }
 
@@ -468,16 +468,16 @@ There are no non-null assertions, so the undefined case must always be handled.
 These will work similarly to how they do in Go and Python. While there is no `tuple` keyword, you can define tuples using the types used in them. For example:
 
 ```
-(int, string) (a, b) = (1, "Hi")
+(int, str) (a, b) = (1, "Hi")
 a == 1 // type int
-b == "Hi" // type string
+b == "Hi" // type str
 ```
 
 Tuples themselves cannot be undefined, though their values can be:
 
 ```
-(string?, string?) result = ("Hello", undefined)
-result == ("Hello", undefined) // type (string?, string?)
+(str?, str?) result = ("Hello", undefined)
+result == ("Hello", undefined) // type (str?, str?)
 ```
 
 You can use this to return multiple values from a function, for example:
@@ -497,7 +497,7 @@ vals == (6, -2)
 You can also access individual elements of a tuple with their index:
 
 ```
-(int, string, decimal) vals = (1, "hi", 2.5)
+(int, str, decimal) vals = (1, "hi", 2.5)
 vals[0] == 1
 vals[1] == "hi"
 vals[2] == 2.5

@@ -77,11 +77,11 @@ match myNum {
 You can also use functions and methods in match statements, as long as they return a boolean, and the value being checked is the first parameter:
 
 ```
-fn checkIfAnimal(string animal, string check) -> boolean {
+fn checkIfAnimal(str animal, str check) -> boolean {
   return animal == check
 }
 
-string animal = "Dog"
+str animal = "Dog"
 match animal {
   "Dog" {
     // Equivalent to `if animal == "Dog"`
@@ -105,7 +105,7 @@ match animal {
   }
 
   .startsWith("B") {
-    // Can have methods of the type, for example String.startsWith()
+    // Can have methods of the type, for example str.startsWith()
     // Equivalent to `if animal.startsWith("B")`
 
     print("Starts with a B")
