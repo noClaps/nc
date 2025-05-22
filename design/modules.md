@@ -5,7 +5,7 @@ Import statements import the whole module and assign it to a variable. Specific 
 ```
 import math // assigned to variable `math`
 
-float phi = (math.sqrt(5) + 1) / 2
+decimal phi = (math.sqrt(5) + 1) / 2
 ```
 
 This is beneficial because different modules can export functions with the same name, and it'll always be clear where each function came from, at the cost of typing slightly more.

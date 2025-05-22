@@ -18,8 +18,8 @@ decimal pi = 3.141592653589793
 /// A function to find the square root of an array of integers
 /// @param The array of integers to square root
 /// @returns An array of square roots
-fn sqrtAll(int[] nums) -> float[] {
-  mut float[] rootVals = []
+fn sqrtAll(int[] nums) -> decimal[] {
+  mut decimal[] rootVals = []
   for i in nums {
     rootVals[i] = math.sqrt(nums[i])
   }

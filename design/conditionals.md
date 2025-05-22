@@ -5,8 +5,8 @@
 If-else statements are similar to most other languages. The main difference in this language is that there are no ternaries or "Elvis" operators `?:`, so all values must go through pattern matching or fully written if-else statements.
 
 ```
-float pi = 3.14
-float euler = 2.71
+decimal pi = 3.14
+decimal euler = 2.71
 
 if pi == 3.14 {
   print("Pi moment")

@@ -54,7 +54,7 @@ bigint myBigInt = bigint(1) // equivalent to the above expression
 bigint myBigInt = bigint(1u) // you can also convert uints
 ```
 
-If any of the integer conversion functions are used on a float or decimal, then only the integer part will be returned. So, for example, `int(2.5)` will become `2`.
+If any of the integer conversion functions are used on a decimal, then only the integer part will be returned. So, for example, `int(2.5)` will become `2`.
 
 #### Ranges
 
@@ -107,7 +107,7 @@ uint[] unums = [1u:2u:20u]
 bigint[] bignums = [1n:2n:20n]
 ```
 
-### Floats and Decimals
+### Decimals
 
 Programming languages have had an issue with how to accurately represent decimal values. Most of them have followed the [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard for floating point values, and that works fine, but it comes with some limitations. I'm sure you've seen `0.1 + 0.2 == 0.3` resolving to `false` in most languages, including Python, C++, JavaScript, etc. I won't get into the reason why that is here, but what if we instead looked at math to handle that for us?
 
@@ -122,16 +122,9 @@ struct Fraction {
 
 Given that all numbers have to be rational in traditional programming languages anyway, we can get rid of the issues that irrational numbers like π can cause, simply by rounding them to a sane value. This will also allow values like `1/3` to be represented with full accuracy, and operations like multiplication and division can be massively simplified by multiplying or dividing the numerator or denominator. However, this will slightly complicate the implementations of addition and substraction, as an algorithm for the least common multiple of two denominators will need to be found.
 
-Additionally, a struct will generally be slower to work with than a simple floating point value, but I believe the performance cost may be worth it for the accuracy it will bring. While the `float` data type will be consistent with IEEE 754 standards, the `decimal` data type (which will be slower but with higher accuracy) will be represented with this Fraction structure. However, whenever the value needs to be displayed, such as when it is printed to the screen, it will be converted to the `float` type by default, and can optionally be displayed as a fraction.
+Additionally, a struct will generally be slower to work with than a simple floating point value, but I believe the performance cost may be worth it for the accuracy it will bring. The `decimal` data type (which will be slower but with higher accuracy) will be represented with this Fraction structure. However, whenever the value needs to be displayed, such as when it is printed to the screen, it will be printed in decimal form, and can optionally be written in fraction form.
 
-Floats can be declared with any number that has a decimal point, or by using the `float()` function:
-
-```
-float myFloat = 2.0
-float myFloat = float(2) // same as the above expression
-```
-
-Decimals can be declared by adding a `d` to the end of a number, both with and without the decimal point, or by using the `decimal()` function:
+Decimals can be declared with any number that has a decimal point, or by using the `decimal()` function:
 
 ```
 // All of these have the same output
@@ -282,7 +275,7 @@ int[] nums = [1, 2, 3, 4, 5]
 nums[2] = 10 // error: mutating immutable value
 
 mut int[] nums2 = [1, 2, 3, 4, 5]
-nums[3] = 3.5 // error: `float` value in an `int` array
+nums[3] = 3.5 // error: `decimal` value in an `int` array
 ```
 
 All arrays are dynamically sized, and would usually be called "lists" in other languages.
@@ -405,11 +398,11 @@ print("This is an escaped string with an expression inside: \{5 + 2}")
 All values are converted to strings using the `string()` function when passed into a format string. If you'd like to use your own format, you can convert your value to a string yourself before passing it into the format string. For example:
 
 ```
-fn intToFloatStr(int a) -> string {
-  return string(float(a))
+fn intToDeciamlStr(int a) -> string {
+  return string(decimal(a))
 }
 
-print("My number is {intToFloatStr(10)}")
+print("My number is {intToDecimalStr(10)}")
 // "My number is 10.0
 ```
 
@@ -504,7 +497,7 @@ vals == (6, -2)
 You can also access individual elements of a tuple with their index:
 
 ```
-(int, string, float) vals = (1, "hi", 2.5)
+(int, string, decimal) vals = (1, "hi", 2.5)
 vals[0] == 1
 vals[1] == "hi"
 vals[2] == 2.5

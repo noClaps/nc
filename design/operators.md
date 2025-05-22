@@ -1,6 +1,6 @@
 # Operators
 
-All operators (except the pipe operator) will require its arguments to be of the same type. So, it will not be possible to add an `int` to a `float` without first converting one or the other to the respective type.
+All operators (except the pipe operator) will require its arguments to be of the same type. So, it will not be possible to add an `int` to a `decimal` without first converting one or the other to the respective type.
 
 ## Logical
 

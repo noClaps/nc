@@ -56,15 +56,11 @@ body("Hello World") // <body>Hello World</body>
 Functions can be overloaded with different implementations of the same function. This is usually helpful when you want to have multiple parameter types, for example. However, because the language is strictly typed, each overload must have its own implementation.
 
 ```
-fn sqrt(int n) -> float {
+fn sqrt(int n) -> decimal {
   // implementation for int
 }
 
-fn sqrt(float n) -> float {
-  // implementation for float
-}
-
-fn sqrt(decimal n) -> float {
+fn sqrt(decimal n) -> decimal {
   // implementation for decimal
 }
 ```
@@ -72,8 +68,8 @@ fn sqrt(decimal n) -> float {
 You can even have functions with the same input parameters, since the return type can determine which function implementation was used.
 
 ```
-fn sqrt(int n) -> float {
-  // returns float
+fn sqrt(int n) -> int {
+  // returns int
 }
 
 fn sqrt(int n) -> decimal {
