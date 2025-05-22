@@ -80,20 +80,26 @@ Ranges are inclusive on both ends. You can also use a range to get a slice out o
 ```
 int[] fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 int[] fib5 = fibonacci[0:4] // [0, 1, 1, 2, 3]
-int[] fibEven = fibonacci[0:2:fibonacci.len-1] // [0, 1, 3, 8, 21, 55]
+int[] fibEven = fibonacci[0:2:$] // [0, 1, 3, 8, 21, 55]
 
 str helloWorld = "Hello World"
 str hello = helloWorld[0:4] // "Hello"
+```
+
+When using ranges for indexing, you can use `$` to signify the last index, basically equivalent to `array.len-1`. You can then subtract a number from `$` to access previous values:
+
+```
+fibonacci[1:$-1] == [1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
 
 You can also use ranges to quickly reverse arrays or strings:
 
 ```
 int[] nums = [1, 2, 3, 4, 5]
-int[] reversedNums = nums[nums.len-1:-1:0] // [5, 4, 3, 2, 1]
+int[] reversedNums = nums[$:-1:0] // [5, 4, 3, 2, 1]
 
 str hello = "Hello"
-str reversedHello = hello[hello.len-1:-1:0] // "olleH"
+str reversedHello = hello[$:-1:0] // "olleH"
 ```
 
 When using ranges to get a slice, you cannot have negative values, and this will throw an error. Negative indexing is only allowed when accessing a single value.
@@ -280,13 +286,14 @@ nums[3] = 3.5 // error: `decimal` value in an `int` array
 
 All arrays are dynamically sized, and would usually be called "lists" in other languages.
 
-Arrays are 0-indexed, so the first value of the array is at the 0th index. Negative indexing is also allowed, and will count from the end of the array, starting at `-1`, which is the last value.
+Arrays are 0-indexed, so the first value of the array is at the 0th index. Negative indexing is not allowed, but you can use `$` to signify the last index of the array, basically equivalent to the `array.len-1` value. You can also count backwards by subtracting from `$`.
 
 ```
 int[] nums = [1, 2, 3, 4, 5]
 nums[0] == 1
 nums[1] == 2
-nums[-1] == 5
+nums[$] == 5
+nums[$-1] == 4
 ```
 
 In terms of implementation, arrays will be implemented similarly to Python's lists, where they grow dynamically and exponentially, doubling in size every time the capacity fills up.
