@@ -406,6 +406,44 @@ print("My number is {intToDecimalStr(10)}")
 // "My number is 10.0
 ```
 
+#### Multiline strings
+
+You can declare a multiline string using `"""`. This will also dedent the string to the position of the closing `"""`, and also escape any `"` inside. For example:
+
+```
+str myString = """
+  Hello World
+    Indented line
+  Unindented line
+  """
+
+print(myString)
+```
+
+will output
+
+```
+Hello World
+  Indented line
+Unindented line
+```
+
+You can also use values inside multiline strings using the same syntax as described in [Format strings](#format-strings). For example:
+
+```
+print("""
+3 + 5 = {3 + 5}
+8 + 10 = {8 + 10}
+""")
+```
+
+will output:
+
+```
+3 + 5 = 8
+8 + 10 = 18
+```
+
 ### Booleans
 
 Booleans are represented by the `bool` type, and can only be one of two values: `true` and `false`.
