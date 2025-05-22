@@ -10,7 +10,7 @@ int a = 2 // This is a comment after a statement
 Doc comments can be written with `///`:
 
 ```
-import math
+import "std/math"
 
 /// The value of pi
 decimal pi = 3.141592653589793
