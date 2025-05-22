@@ -133,6 +133,26 @@ int d = try addThrows(5, 2)
 d == 7
 ```
 
+Any function that calls another function marked with `try` must itself be declared as a throwing function.
+
+```
+fn calc(int a, int b, str op) -> int! { // marked as throwing
+  match op {
+    "+" { return try addThrows(a, b) }
+  }
+}
+```
+
+If a function throws but does not return anything, it can be marked as throwing with `-> !`:
+
+```
+fn isValid(str source, str check) -> ! { // marked as throwing without return value
+  if source != check {
+    panic("Not valid")
+  }
+}
+```
+
 Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](#tuples):
 
 ```
