@@ -506,7 +506,7 @@ There are no non-null assertions, so the undefined case must always be handled.
 These will work similarly to how they do in Go and Python. While there is no `tuple` keyword, you can define tuples using the types used in them. For example:
 
 ```
-(int, str) (a, b) = (1, "Hi")
+int a, str b = (1, "Hi")
 a == 1 // type int
 b == "Hi" // type str
 ```
@@ -545,10 +545,20 @@ You can "destructure" a tuple by assigning its values to another tuple:
 
 ```
 (int, int) vals = (1, 2)
-(int, int) (a, b) = vals
+int a, int b = vals
 
 a == 1
 b == 2
+```
+
+You can also partially destructure a tuple:
+
+```
+(int, int, int) vals = (1, 2, 3)
+int a, (int, int) b = vals
+
+a == 1
+b == (2, 3)
 ```
 
 ### Errors

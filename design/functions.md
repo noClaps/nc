@@ -164,7 +164,7 @@ fn addError(int a, int b) -> (int?, error?) {
   return (a + b, undefined)
 }
 
-(int?, error?) (c, err) = addError(3, 5)
+int? c, error? err = addError(3, 5)
 if err != undefined || c == undefined {
   print(err)
 }
