@@ -16,7 +16,7 @@ uint myNum = 1u // cannot be negative
 uint myNum = uint(1) // equivalent to the above expression
 ```
 
-> [!DANGER]
+> [!WARNING]
 > If a value outside the range of `uint` or `int` is passed, it will wrap around to fit within the bounds.
 
 There will also be an arbitrary-precision integer type called `bigint`, which will be incompatible with the other `int` types, and will be slower. You can convert between `bigint` and `int`, but operations must be between the same type, e.g. you cannot add a `bigint` and an `int`. Converting from `bigint` to `int` will cap the value at the 64-bit signed integer limits.
