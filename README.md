@@ -9,7 +9,7 @@ The name, much like the language, is a work in progress.
 ## Design
 
 - [Comments](./design/comments.md)
-- [Conditionals](./design/conditionals.md)
+- [Conditionals](./design/conditionals/index.md)
 - [Functions](./design/functions.md)
 - [Loops](./design/loops.md)
 - [Modules](./design/modules.md)
