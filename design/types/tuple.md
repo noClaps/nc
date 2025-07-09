@@ -8,11 +8,11 @@ a == 1 // type int
 b == "Hi" // type str
 ```
 
-Tuples themselves cannot be undefined, though their values can be:
+Tuples themselves cannot be none, though their values can be:
 
 ```
-(str?, str?) result = ("Hello", undefined)
-result == ("Hello", undefined) // type (str?, str?)
+(str?, str?) result = ("Hello", none)
+result == ("Hello", none) // type (str?, str?)
 ```
 
 You can use this to return multiple values from a function, for example:

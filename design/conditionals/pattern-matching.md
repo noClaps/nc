@@ -79,7 +79,7 @@ match animal {
 }
 ```
 
-Pattern matching can also be used to conditionally assign a value to a variable based on the value of another variable, provided that each branch returns the same type, or `undefined` if assigning to an optional.
+Pattern matching can also be used to conditionally assign a value to a variable based on the value of another variable, provided that each branch returns the same type, or `none` if assigning to an optional.
 
 ```
 int index = 2

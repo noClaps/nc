@@ -158,40 +158,40 @@ Functions that throw will immediately exit out of the program if they error. If 
 ```
 fn addError(int a, int b) -> (int?, error?) {
   if a < b {
-    return (undefined, error("first argument cannot be less than second argument"))
+    return (none, error("first argument cannot be less than second argument"))
   }
 
-  return (a + b, undefined)
+  return (a + b, none)
 }
 
 int? c, error? err = addError(3, 5)
-if err != undefined || c == undefined {
+if err != none || c == none {
   print(err)
 }
 
 // `c` is of type `int` here
 ```
 
-Alternatively, you can handle the error inside the function, and simply return `undefined`:
+Alternatively, you can handle the error inside the function, and simply return `none`:
 
 ```
-fn addUndef(int a, int b) -> int? {
+fn addOpt(int a, int b) -> int? {
   if a < b {
     print("first argument cannot be less than second argument")
-    return undefined
+    return none
   }
 
   return a + b
 }
 
-int? c = addUndef(3, 5)
-c == undefined
+int? c = addOpt(3, 5)
+c == none
 
-int? d = addUndef(5, 2)
+int? d = addOpt(5, 2)
 d == 7
 ```
 
-Handling the error inside the function and returning `undefined` is more correct if you're building an application and you don't want an error to crash the application. If you want the application to crash on error, throwing is the correct option. Finally, if you're building a library to be used by other people, you likely want to return errors as values so that the user of your library can handle the error how they wish.
+Handling the error inside the function and returning `none` is more correct if you're building an application and you don't want an error to crash the application. If you want the application to crash on error, throwing is the correct option. Finally, if you're building a library to be used by other people, you likely want to return errors as values so that the user of your library can handle the error how they wish.
 
 However, the language does not enforce this on you, and you are free to handle errors however you wish.
 
@@ -211,23 +211,23 @@ add(b: 1, a: 2) // Can declare them in any order now since they're named
 
 ## Optional arguments
 
-Parameters can be defined as [optionals](./types/optional), but these cannot be excluded from the function call if they are undefined. You must pass in `undefined` as an argument if you are using an optional argument.
+Parameters can be defined as [optionals](./types/optional), but these cannot be excluded from the function call if they are not defined. You must pass in `none` as an argument if you are using an optional argument.
 
 ```
 fn optAddNum(int a, int? b) -> int {
-  if (b == undefined) {
+  if (b == none) {
     return a
   }
 
   return a + b
 }
 
-int c = optAddNum(5, undefined)
+int c = optAddNum(5, none)
 ```
 
 Not passing the second value will create a [partially applied function](#partial-application) instead:
 
 ```
 fn optAddTo5 = optAddNum(5)
-int c = optAddTo5(undefined)
+int c = optAddTo5(none)
 ```
