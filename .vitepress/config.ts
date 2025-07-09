@@ -44,6 +44,7 @@ export default defineConfig({
               { text: "Range", link: "/design/types/range" },
               { text: "Struct", link: "/design/types/struct" },
               { text: "Tuple", link: "/design/types/tuple" },
+              { text: "Union", link: "/design/types/union" },
             ],
           },
         ],
