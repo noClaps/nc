@@ -35,6 +35,7 @@ export default defineConfig({
             items: [
               { text: "Array", link: "/design/types/array" },
               { text: "Boolean", link: "/design/types/boolean" },
+              { text: "Complex", link: "/design/types/complex" },
               { text: "Character and String", link: "/design/types/string" },
               { text: "Decimal", link: "/design/types/decimal" },
               { text: "Error", link: "/design/types/error" },
