@@ -14,4 +14,5 @@ The name, much like the language, is a work in progress.
 - [Loops](./design/loops.md)
 - [Modules](./design/modules.md)
 - [Operators](./design/operators.md)
-- [Variables and Types](./design/variables.md)
+- [Types](./design/types/index.md)
+- [Variables](./design/variables.md)
