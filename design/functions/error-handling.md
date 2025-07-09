@@ -41,7 +41,7 @@ fn isValid(str source, str check) -> ! { // marked as throwing without return va
 }
 ```
 
-Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](./types/tuple):
+Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](../types/tuple):
 
 ```
 fn addError(int a, int b) -> (int?, error?) {

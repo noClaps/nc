@@ -1,6 +1,6 @@
 # Optional arguments
 
-Parameters can be defined as [optionals](./types/optional), but these cannot be excluded from the function call if they are not defined. You must pass in `none` as an argument if you are using an optional argument.
+Parameters can be defined as [optionals](../types/optional), but these cannot be excluded from the function call if they are not defined. You must pass in `none` as an argument if you are using an optional argument.
 
 ```
 fn optAddNum(int a, int? b) -> int {
