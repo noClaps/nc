@@ -56,7 +56,7 @@ You can use the `Self` type and the `self` keyword within method definitions to 
 
 Realistically, methods are just a convenience feature, and generally it would be clearer to write them as functions, though there are certain cases where they may be useful, such as in [pattern matching](../conditionals/pattern-matching).
 
-As [functions are values](../functions#functions-as-values), you can store functions in structs as a value:
+As [functions are values](../functions/functions-as-values), you can store functions in structs as a value:
 
 ```
 struct Fraction {

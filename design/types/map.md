@@ -48,7 +48,7 @@ for key in myMap {
 
 Maps are implemented using [Swiss tables](https://abseil.io/about/design/swisstables) for high read/write performance.
 
-Maps differ from objects in that they don't have methods, but you can use [functions as values](../functions#functions-as-values) to store functions in a map:
+Maps differ from objects in that they don't have methods, but you can use [functions as values](../functions/functions-as-values) to store functions in a map:
 
 ```
 [str](fn(int, int) -> int) myFunctionMap = [
