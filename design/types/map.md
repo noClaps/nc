@@ -14,7 +14,7 @@ Maps are similar to arrays except that you can have a custom key type, instead o
 Trailing commas are allowed in map declarations. Similar to arrays, you can access the length of the map with `<map>.len`. Values of a map can be accessed with `<map>[<key>]`. For example, for the map above, we can access the value corresponding to `"string5"` with:
 
 ```
-myMap["string5"] // 5d
+myMap["string5"] // 5.0
 ```
 
 If the map is mutable, you can write to the map using the same syntax:
@@ -24,7 +24,7 @@ mut [str]decimal myMap = [
   // same as above
 ]
 
-myMap["string11"] = 11d
+myMap["string11"] = 11.0
 ```
 
 You can use a `for` loop to loop through the keys of a map:

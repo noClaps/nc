@@ -19,8 +19,7 @@ Decimals can be declared with any number that has a decimal point, or by using t
 
 ```
 // All of these have the same output
-decimal myDecimal = 2d
-decimal myDecimal = 2.0d
+decimal myDecimal = 2.0
 decimal myDecimal = decimal(2)
-decimal myDecimal = decimal(2.0)
+decimal myDecimal = decimal(2, 1) // fn decimal(int numerator, int denominator) -> decimal
 ```
