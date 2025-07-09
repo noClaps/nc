@@ -153,7 +153,7 @@ fn isValid(str source, str check) -> ! { // marked as throwing without return va
 }
 ```
 
-Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](#tuples):
+Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](./types/tuple):
 
 ```
 fn addError(int a, int b) -> (int?, error?) {
@@ -211,7 +211,7 @@ add(b: 1, a: 2) // Can declare them in any order now since they're named
 
 ## Optional arguments
 
-Parameters can be defined as [optionals](#optional-values), but these cannot be excluded from the function call if they are undefined. You must pass in `undefined` as an argument if you are using an optional argument.
+Parameters can be defined as [optionals](./types/optional), but these cannot be excluded from the function call if they are undefined. You must pass in `undefined` as an argument if you are using an optional argument.
 
 ```
 fn optAddNum(int a, int? b) -> int {
@@ -225,7 +225,7 @@ fn optAddNum(int a, int? b) -> int {
 int c = optAddNum(5, undefined)
 ```
 
-Not passing the second value will create a [curried function](#currying) instead:
+Not passing the second value will create a [partially applied function](#partial-application) instead:
 
 ```
 fn optAddTo5 = optAddNum(5)

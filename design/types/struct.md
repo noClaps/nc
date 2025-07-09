@@ -54,9 +54,9 @@ myFrac == Fraction{.numerator: 15, .denominator: 31}
 
 You can use the `Self` type and the `self` keyword within method definitions to refer to the struct type and the struct itself, respectively.
 
-Realistically, methods are just a convenience feature, and generally it would be clearer to write them as functions, though there are certain cases where they may be useful, such as in [pattern matching](#pattern-matching).
+Realistically, methods are just a convenience feature, and generally it would be clearer to write them as functions, though there are certain cases where they may be useful, such as in [pattern matching](../conditionals/pattern-matching).
 
-As [functions are values](#functions-as-values), you can store functions in structs as a value:
+As [functions are values](../functions#functions-as-values), you can store functions in structs as a value:
 
 ```
 struct Fraction {
@@ -88,7 +88,7 @@ myFrac == Fraction{
 }
 ```
 
-As the function is being used as a value, it must be included in every initialisation of the struct. Function values cannot be used in [pattern matching](#pattern-matching) like methods are to test the value, and do not prefill the first value with the struct itself. However, you can use the `Self` type in function signatures to refer to the struct type.
+As the function is being used as a value, it must be included in every initialisation of the struct. Function values cannot be used in [pattern matching](../conditionals/pattern-matching) like methods are to test the value, and do not prefill the first value with the struct itself. However, you can use the `Self` type in function signatures to refer to the struct type.
 
 Additionally, since these functions are used as values, you cannot declare them inline, and you must declare them during initialisation. This can have some benefits, such as including different implementations for different structs of the same type:
 
