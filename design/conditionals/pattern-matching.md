@@ -93,3 +93,48 @@ char letter = match index {
 
 letter == "B"
 ```
+
+You can also use ranges in your branches when matching on integer or decimal values.
+
+```
+int num = 5
+
+match num {
+  -1 => { print("Is negative 1") }
+  $:4 => { print("Small number") }
+  5:10 => {
+    // this matches
+    print("Medium number")
+  }
+  11:$ => { print("Large number") }
+  else => {
+    // unreachable in this case, but since `int` can be negative, this branch
+    // needs to exist
+  }
+}
+
+// Medium number
+```
+
+In this case, the `$` in the range means the integer limit in either direction, so `MIN_INTEGER` in the `$:4` case and `MAX_INTEGER` in the `11:$` case. However, the range is not actually expanded into an array, and only the finite ends (`4` and `11`, in this case) are checked against. However, if a step range (like `0:2:10`) is used, then the array is created and checked for inclusion.
+
+If multiple cases match, the one that was defined first will be chosen.
+
+```
+int num = 5
+
+match num {
+  $:5 => {
+    // this matches
+    print("Small number")
+  }
+  $:10 => {
+    // this also matches, but the previous branch already matched so it doesn't
+    // reach here
+    print("Medium number")
+  }
+  else => { print("Large number") }
+}
+
+// Small number
+```
