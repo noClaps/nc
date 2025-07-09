@@ -1,4 +1,4 @@
-# Arrays
+# Array
 
 Arrays are defined as a struct of the length and the array itself:
 

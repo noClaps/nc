@@ -1,4 +1,4 @@
-# Decimals
+# Decimal
 
 Programming languages have had an issue with how to accurately represent decimal values. Most of them have followed the [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard for floating point values, and that works fine, but it comes with some limitations. I'm sure you've seen `0.1 + 0.2 == 0.3` resolving to `false` in most languages, including Python, C++, JavaScript, etc. I won't get into the reason why that is here, but what if we instead looked at math to handle that for us?
 
