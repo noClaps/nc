@@ -26,7 +26,7 @@ Any function that calls another function marked with `try` must itself be declar
 ```
 fn calc(int a, int b, str op) -> int! { // marked as throwing
   match op {
-    "+" { return try addThrows(a, b) }
+    "+" => { return try addThrows(a, b) }
   }
 }
 ```
@@ -41,19 +41,19 @@ fn isValid(str source, str check) -> ! { // marked as throwing without return va
 }
 ```
 
-Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](../types/tuple):
+Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](../types/tuple), and catch them with the `catch` keyword:
 
 ```
-fn addError(int a, int b) -> (int?, error?) {
+fn addError(int a, int b) -> (int, error) {
   if a < b {
-    return (none, error("first argument cannot be less than second argument"))
+    return (0, error("first argument cannot be less than second argument"))
   }
 
   return (a + b, none)
 }
 
-int? c, error? err = addError(3, 5)
-if err != none || c == none {
+// the error goes into the `err` variable, but you can name this whatever you'd like
+int c = addError(3, 5) catch err {
   print(err)
 }
 
