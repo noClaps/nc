@@ -55,6 +55,7 @@ export default defineConfig({
               { text: "Complex", link: "/complex" },
               { text: "Character and String", link: "/string" },
               { text: "Decimal", link: "/decimal" },
+              { text: "Enum", link: "/enum" },
               { text: "Error", link: "/error" },
               { text: "Int and BigInt", link: "/int" },
               { text: "Map", link: "/map" },

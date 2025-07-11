@@ -13,6 +13,7 @@
 - `bool`: This is a builtin type for [booleans](../types/boolean).
 - `complex`: This is a builtin type for [complex numbers](../types/complex).
 - `decimal`: This is a builtin type for [decimal numbers](../types/decimal).
+- `enum`: This is a keyword for defining [enums](../types/enum).
 - `error`: This is a builtin type for [errors](../types/error).
 - `int`, `uint`, `bigint`: These are builtin types for [integers](../types/int).
 - `char`, `string`: These are builtin types for [characters and strings](../types/string).
