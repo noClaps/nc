@@ -27,3 +27,33 @@ while j > 0 {
 }
 // `j` is available here since it was declared outside
 ```
+
+## Labels, `break`, and `continue`
+
+There are `break` and `continue` keywords for breaking out of the loop, and skipping to the next iteration, respectively.
+
+However, if you have a label on your loop, you can put the label name after `break` or `continue` to break or continue from that label. This is very useful if you have nested loops, for instance.
+
+```
+int[][] table = [[...]]
+
+rows: for row in table {
+// ^ This is a label
+
+  for col in table[row] {
+    int val = table[row][col]
+
+    match val {
+      2 => { continue } // This will skip to the next value in the inner loop
+      3 => { break } // This will break out of the inner loop
+      5 => { continue :rows } // This will skip to the next value in the outer loop
+      10 => { break :rows } // This will break out of the outer loop and go to the `print("Hello world")` below
+      _ => {}
+    }
+
+    print(val)
+  }
+}
+
+print("Hello world")
+```
