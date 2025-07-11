@@ -18,6 +18,14 @@ export default defineConfig({
           { text: "Operators", link: "/operators" },
           { text: "Variables", link: "/variables" },
           {
+            text: "Builtin",
+            base: "/design/builtin",
+            items: [
+              { text: "Functions", link: "/functions" },
+              { text: "Keywords", link: "/keywords" },
+            ],
+          },
+          {
             text: "Conditionals",
             base: "/design/conditionals",
             items: [
