@@ -11,8 +11,6 @@
     --vp-c-neutral-inverse: var(--vp-c-bg);
     --vp-code-block-color: var(--vp-c-text-1);
     --vp-code-copy-code-bg: var(--vp-c-bg);
-    --vp-font-family-base: system-ui;
-    --vp-font-family-mono: monospace;
     --vp-input-switch-bg-color: var(--vp-c-bg-alt);
     --vp-sidebar-bg-color: var(--vp-c-bg);
 }
