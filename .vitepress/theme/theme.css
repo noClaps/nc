@@ -1,0 +1,38 @@
+:root {
+    --vp-c-brand-1: #ff732e;
+    --vp-c-bg: light-dark(#eee, #222);
+    --vp-c-bg-alt: light-dark(#ddd, #333);
+    --vp-c-divider: light-dark(#bbb, #666);
+    --vp-c-text-1: light-dark(#333, #ccc);
+    --vp-c-text-2: light-dark(#555, #aaa);
+    --vp-code-block-bg: light-dark(#e5e5e5, #2a2a2a);
+
+    --vp-c-gutter: var(--vp-c-divider);
+    --vp-c-neutral-inverse: var(--vp-c-bg);
+    --vp-code-block-color: var(--vp-c-text-1);
+    --vp-code-copy-code-bg: var(--vp-c-bg);
+    --vp-font-family-base: system-ui;
+    --vp-font-family-mono: monospace;
+    --vp-input-switch-bg-color: var(--vp-c-bg-alt);
+    --vp-sidebar-bg-color: var(--vp-c-bg);
+}
+
+.VPSidebar {
+    border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSwitch {
+    border-color: var(--vp-c-divider);
+}
+
+.copy:hover {
+    color: var(--vp-c-brand-1);
+}
+
+.DocSearch-Button-Placeholder {
+    margin-top: 0 !important;
+}
+.DocSearch-Button-Key {
+    display: inline-flex !important;
+    padding-bottom: 0 !important;
+}
