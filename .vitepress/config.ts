@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "NC",
+  description: "A new language I'm working on",
   cleanUrls: true,
   markdown: { math: true },
   rewrites: { "README.md": "index.md" },
