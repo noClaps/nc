@@ -36,7 +36,7 @@ fn eprintln(...) {
 
 ## `typeof()`
 
-This returns the type of a value and is only available to use in [`match` statements](../conditionals/pattern-matching).
+This returns the type of a value.
 
 ```
 fn typeof(val) -> type
@@ -76,3 +76,11 @@ There are functions to cast a value into a different type:
 - `string()`
 
 If you define a type of your own, you need to define these functions for that type if you'd like to be able to convert into them. This is especially important for `string()`, as you need to define it in order to print the value out using the [`print()`](#print-and-println) and [`eprint()`](#eprint-and-eprintln) functions above.
+
+## `new()`
+
+This function takes in a type as an argument, and creates a value of that type.
+
+```
+fn new(type anyType) -> anyType
+```

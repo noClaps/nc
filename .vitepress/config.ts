@@ -65,6 +65,7 @@ export default defineConfig({
               { text: "Range", link: "/range" },
               { text: "String", link: "/string" },
               { text: "Struct", link: "/struct" },
+              { text: "Type", link: "/type" },
               { text: "Tuple", link: "/tuple" },
               { text: "Union", link: "/union" },
             ],
