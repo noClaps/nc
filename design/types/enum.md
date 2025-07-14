@@ -13,7 +13,7 @@ enum Status {
 You can access enum members with `<enum>.<member>`. You can then use this in your code:
 
 ```
-fn checkStatus(Status st) -> string {
+fn checkStatus(Status st) -> str {
   match st {
     Pending -> { return "pending" }
     Complete -> { return "complete" }

@@ -5,15 +5,15 @@ The `type` type is a special data type that allows other types to be passed into
 For example, you could declare your own custom types based on the existing types:
 
 ```
-type customStringType = string
+type customStringType = str
 
-// `customStringType` can now be used as a distinct type from `string`
+// `customStringType` can now be used as a distinct type from `str`
 ```
 
 You could also use them as function arguments:
 
 ```
-fn decode(string data, type outType) -> (outType, error) {}
+fn decode(str data, type outType) -> (outType, error) {}
 ```
 
 As you can see above, using a type as a function argument also allows you to use as part of the return type for the function, like how generics behave in other languages.

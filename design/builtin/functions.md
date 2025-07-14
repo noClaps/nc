@@ -2,7 +2,7 @@
 
 ## `fprint()`
 
-These are functions that take in a file as the first input and an arbitrary number of values, and write those outputs to the file. The values are formatted according to the `string()` function defined on that type.
+These are functions that take in a file as the first input and an arbitrary number of values, and write those outputs to the file. The values are formatted according to the `str()` function defined on that type.
 
 ```
 fn fprint(file f, ...)
@@ -73,9 +73,9 @@ There are functions to cast a value into a different type:
 - `decimal()`
 - `error()`
 - `int()`, `uint()`, `bigint()`
-- `string()`
+- `str()`
 
-If you define a type of your own, you need to define these functions for that type if you'd like to be able to convert into them. This is especially important for `string()`, as you need to define it in order to print the value out using the [`print()`](#print-and-println) and [`eprint()`](#eprint-and-eprintln) functions above.
+If you define a type of your own, you need to define these functions for that type if you'd like to be able to convert into them. This is especially important for `str()`, as you need to define it in order to print the value out using the [`print()`](#print-and-println) and [`eprint()`](#eprint-and-eprintln) functions above.
 
 ## `new()`
 
