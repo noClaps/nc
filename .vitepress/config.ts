@@ -53,8 +53,8 @@ export default defineConfig({
             items: [
               { text: "Array", link: "/array" },
               { text: "Boolean", link: "/boolean" },
+              { text: "Character", link: "/character" },
               { text: "Complex", link: "/complex" },
-              { text: "Character and String", link: "/string" },
               { text: "Decimal", link: "/decimal" },
               { text: "Enum", link: "/enum" },
               { text: "Error", link: "/error" },
@@ -62,6 +62,7 @@ export default defineConfig({
               { text: "Map", link: "/map" },
               { text: "Optional values", link: "/optional" },
               { text: "Range", link: "/range" },
+              { text: "String", link: "/string" },
               { text: "Struct", link: "/struct" },
               { text: "Tuple", link: "/tuple" },
               { text: "Union", link: "/union" },

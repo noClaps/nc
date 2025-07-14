@@ -1,8 +1,6 @@
-# Character and String
+# String
 
-Strings are defined as an array of characters. Of course, this is all internal, and they will be represented to you as `"string"`. However, this will allow you to access the length of the string with `<string>.len`.
-
-Characters are a single UTF-8 rune, represented by the `char` type. This means that characters that take up multiple bytes, like emojis or CJK characters. The benefit of this is that, if you're trying to access a character, you will get the full character you expect, even if it spans multiple bytes.
+Strings are defined as an array of [characters](./character). Of course, this is all internal, and they will be represented to you as `"string"`. However, this will allow you to access the length of the string with `<string>.len`.
 
 ```
 str myString = "cookie 🍪"

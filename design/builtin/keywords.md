@@ -11,12 +11,13 @@
 ## Types
 
 - `bool`: This is a builtin type for [booleans](../types/boolean).
+- `char`: This is a builtin type for [characters](../types/character).
 - `complex`: This is a builtin type for [complex numbers](../types/complex).
 - `decimal`: This is a builtin type for [decimal numbers](../types/decimal).
 - `enum`: This is a keyword for defining [enums](../types/enum).
 - `error`: This is a builtin type for [errors](../types/error).
 - `int`, `uint`, `bigint`: These are builtin types for [integers](../types/int).
-- `char`, `string`: These are builtin types for [characters and strings](../types/string).
+- `string`: This is a builtin type for [strings](../types/string).
 - `struct`: This is a keyword for defining [structs](../types/struct).
 - `union`: This is a keyword for defining a [union type](../types/union).
 - `mut`: This keyword allows a value to be [mutable](../variables). It can be used with any type.
