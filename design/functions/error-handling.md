@@ -26,7 +26,7 @@ Any function that calls another function marked with `try` must itself be declar
 ```
 fn calc(int a, int b, str op) -> int! { // marked as throwing
   match op {
-    "+" => { return try addThrows(a, b) }
+    "+" -> { return try addThrows(a, b) }
   }
 }
 ```

@@ -17,13 +17,13 @@ In order to get the constituent type information out of the union, you can do a 
 Number a = 3.14 // The type is Number, but it's a decimal inside
 
 match typeof(a) { // typeof() is a builtin function
-  int => {
+  int -> {
     // `a` has a type of int here, you can use it as such
     print("{a} is an int")
     print(a + 5) // valid
   }
 
-  decimal => { print("{a} is a decimal") }
+  decimal -> { print("{a} is a decimal") }
 }
 ```
 

@@ -44,11 +44,11 @@ rows: for row in table {
     int val = table[row][col]
 
     match val {
-      2 => { continue } // This will skip to the next value in the inner loop
-      3 => { break } // This will break out of the inner loop
-      5 => { continue :rows } // This will skip to the next value in the outer loop
-      10 => { break :rows } // This will break out of the outer loop and go to the `print("Hello world")` below
-      _ => {}
+      2 -> { continue } // This will skip to the next value in the inner loop
+      3 -> { break } // This will break out of the inner loop
+      5 -> { continue :rows } // This will skip to the next value in the outer loop
+      10 -> { break :rows } // This will break out of the outer loop and go to the `print("Hello world")` below
+      _ -> {}
     }
 
     print(val)

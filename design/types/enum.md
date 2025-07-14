@@ -15,9 +15,9 @@ You can access enum members with `<enum>.<member>`. You can then use this in you
 ```
 fn checkStatus(Status st) -> string {
   match st {
-    Pending => { return "pending" }
-    Complete => { return "complete" }
-    Failed => { return "failed" }
+    Pending -> { return "pending" }
+    Complete -> { return "complete" }
+    Failed -> { return "failed" }
   }
 }
 
@@ -59,10 +59,10 @@ for row in board {
     // ...
 
     match aliveNeighbors {
-      $:1 => { board[row][col] = CellState.Dead }
-      4:$ => { board[row][col] = CellState.Dead }
-      3 => { board[row][col] = CellState.Alive }
-      else => {}
+      $:1 -> { board[row][col] = CellState.Dead }
+      4:$ -> { board[row][col] = CellState.Dead }
+      3 -> { board[row][col] = CellState.Alive }
+      else -> {}
     }
   }
 }

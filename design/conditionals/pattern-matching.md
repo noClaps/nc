@@ -6,10 +6,10 @@ A `match` statement behaves similarly to `switch` statements in most other langu
 bool isValid = false
 
 match isValid {
-  true => {
+  true -> {
     print("It's valid!")
   }
-  false => {
+  false -> {
     print("It's not valid!")
   }
 }
@@ -21,15 +21,15 @@ However, in cases where all possible values cannot be checked, or only some of t
 int myNum = 7
 
 match myNum {
-  1 => {
+  1 -> {
     print("First")
   }
 
-  5 => {
+  5 -> {
     print("Fifth")
   }
 
-  else => {
+  else -> {
     print("Something else")
   }
 }
@@ -44,20 +44,20 @@ fn checkIfAnimal(str animal, str check) -> boolean {
 
 str animal = "Dog"
 match animal {
-  "Dog" => {
+  "Dog" -> {
     // Equivalent to `if animal == "Dog"`
     print("Woof")
   }
 
-  "Cat" => {
+  "Cat" -> {
     print("Meow")
   }
 
-  "Mouse" => {
+  "Mouse" -> {
     print("Squeek")
   }
 
-  checkIfAnimal("Bird") => {
+  checkIfAnimal("Bird") -> {
     // Can call functions that return a boolean value
     // The first value is prefilled with the value being checked, `animal` in this case
     // Equivalent to `if checkIfAnimal(animal, "Bird")`
@@ -65,14 +65,14 @@ match animal {
     print("Chirp")
   }
 
-  .startsWith("B") => {
+  .startsWith("B") -> {
     // Can have methods of the type, for example str.startsWith()
     // Equivalent to `if animal.startsWith("B")`
 
     print("Starts with a B")
   }
 
-  else => {
+  else -> {
     // Required to have an else unless all cases are met
     print("Not a recognised pet")
   }
@@ -85,10 +85,10 @@ Pattern matching can also be used to conditionally assign a value to a variable 
 int index = 2
 
 char letter = match index {
-  1 => { return 'A' }
-  2 => { return 'B' }
-  5 => { return 'E' }
-  else => { return 'Z' }
+  1 -> { return 'A' }
+  2 -> { return 'B' }
+  5 -> { return 'E' }
+  else -> { return 'Z' }
 }
 
 letter == "B"
@@ -100,14 +100,14 @@ You can also use ranges in your branches when matching on integer or decimal val
 int num = 5
 
 match num {
-  -1 => { print("Is negative 1") }
-  $:4 => { print("Small number") }
-  5:10 => {
+  -1 -> { print("Is negative 1") }
+  $:4 -> { print("Small number") }
+  5:10 -> {
     // this matches
     print("Medium number")
   }
-  11:$ => { print("Large number") }
-  else => {
+  11:$ -> { print("Large number") }
+  else -> {
     // unreachable in this case, but since `int` can be negative, this branch
     // needs to exist
   }
@@ -124,16 +124,16 @@ If multiple cases match, the one that was defined first will be chosen.
 int num = 5
 
 match num {
-  $:5 => {
+  $:5 -> {
     // this matches
     print("Small number")
   }
-  $:10 => {
+  $:10 -> {
     // this also matches, but the previous branch already matched so it doesn't
     // reach here
     print("Medium number")
   }
-  else => { print("Large number") }
+  else -> { print("Large number") }
 }
 
 // Small number
