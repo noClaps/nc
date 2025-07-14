@@ -53,6 +53,7 @@ export default defineConfig({
             items: [
               { text: "Array", link: "/array" },
               { text: "Boolean", link: "/boolean" },
+              { text: "Byte", link: "/byte" },
               { text: "Character", link: "/character" },
               { text: "Complex", link: "/complex" },
               { text: "Decimal", link: "/decimal" },

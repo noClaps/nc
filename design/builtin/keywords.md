@@ -11,6 +11,7 @@
 ## Types
 
 - `bool`: This is a builtin type for [booleans](../types/boolean).
+- `byte`: This is a builtin type for [bytes](../types/byte).
 - `char`: This is a builtin type for [characters](../types/character).
 - `complex`: This is a builtin type for [complex numbers](../types/complex).
 - `decimal`: This is a builtin type for [decimal numbers](../types/decimal).
