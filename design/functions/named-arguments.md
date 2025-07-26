@@ -2,7 +2,7 @@
 
 Function calls can have named arguments, though this is optional and only for clarity, or in case you'd like to pass in arguments in a different order.
 
-```
+```nc
 fn add(int a, int b) -> int {
   return a + b
 }

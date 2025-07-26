@@ -4,7 +4,7 @@ Programming languages have had an issue with how to accurately represent decimal
 
 In math, any rational decimal value can be represented as a fraction. For example, `0.4` can be written as `4/10`, and `0.333...` can be written as `1/3`. We can use this knowledge to create a `Fraction` data structure that looks like this:
 
-```
+```nc
 struct Fraction {
   int numerator
   int denominator
@@ -17,7 +17,7 @@ Additionally, a struct will generally be slower to work with than a simple float
 
 Decimals can be declared with any number that has a decimal point, or by using the `decimal()` function:
 
-```
+```nc
 // All of these have the same output
 decimal myDecimal = 2.0
 decimal myDecimal = decimal(2)

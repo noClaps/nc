@@ -2,7 +2,7 @@
 
 A `match` statement behaves similarly to `switch` statements in most other languages, though with the added requirement that all possible cases must be met. In cases like booleans, all possible cases can be met easily, as it can only be `true` or `false`, so a match statement like this is appropriate:
 
-```
+```nc
 bool isValid = false
 
 match isValid {
@@ -17,7 +17,7 @@ match isValid {
 
 However, in cases where all possible values cannot be checked, or only some of the cases are valid, the `else` keyword must be used instead to handle all remaining cases:
 
-```
+```nc
 int myNum = 7
 
 match myNum {
@@ -37,7 +37,7 @@ match myNum {
 
 You can also use functions and methods in match statements, as long as they return a boolean, and the value being checked is the first parameter:
 
-```
+```nc
 fn checkIfAnimal(str animal, str check) -> boolean {
   return animal == check
 }
@@ -81,7 +81,7 @@ match animal {
 
 Pattern matching can also be used to conditionally assign a value to a variable based on the value of another variable, provided that each branch returns the same type, or `none` if assigning to an optional.
 
-```
+```nc
 int index = 2
 
 char letter = match index {
@@ -96,7 +96,7 @@ letter == "B"
 
 You can also use ranges in your branches when matching on integer or decimal values.
 
-```
+```nc
 int num = 5
 
 match num {
@@ -120,7 +120,7 @@ In this case, the `$` in the range means the integer limit in either direction, 
 
 If multiple cases match, the one that was defined first will be chosen.
 
-```
+```nc
 int num = 5
 
 match num {

@@ -2,7 +2,7 @@
 
 Functions are defined with the `fn` keyword. The return type of the function must be declared if a function returns any value.
 
-```
+```nc
 fn <name>( <type> arg1, <type> arg2, ... ) -> <return type> {
   // Arguments are immutable
   // Any variables declared inside are scoped to the function
@@ -11,7 +11,7 @@ fn <name>( <type> arg1, <type> arg2, ... ) -> <return type> {
 
 Example function:
 
-```
+```nc
 fn hello(int a, int b) -> str {
   a = 2 // Error
   mut int b = b // Creates new scoped variable `b`, let's call it `bscope`.

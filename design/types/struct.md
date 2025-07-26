@@ -2,7 +2,7 @@
 
 There are no classes in the language, so structs are the next best option. Structs can be defined using the `struct` keyword and a label, which will then be used as the "type".
 
-```
+```nc
 struct Fraction {
   int numerator
   int denominator
@@ -13,7 +13,7 @@ Fraction myFrac = {.numerator: 10, .denominator: 31}
 
 Members of a struct can be accessed with `<struct>.<member>`, and you can loop over the members of a struct with a for loop:
 
-```
+```nc
 for (mem, val) in myFrac {
   print(mem, val)
 }
@@ -24,7 +24,7 @@ for (mem, val) in myFrac {
 
 If your struct is mutable, you can update any of its members:
 
-```
+```nc
 mut Fraction myFrac = {.numerator: 1, .denominator: 10}
 myFrac.numerator *= 2
 
@@ -33,7 +33,7 @@ myFrac == Fraction{.numerator: 2, .denominator: 10}
 
 Structs can also have "methods", which are the same as functions but with the first value being filled as the struct it is being used on. This means that structs cannot be modified themselves by methods, as the arguments to functions are immutable. Instead, each method must return the modified struct, which can then be reassigned to the original struct.
 
-```
+```nc
 struct Fraction {
   int numerator
   int denominator
@@ -58,7 +58,7 @@ Realistically, methods are just a convenience feature, and generally it would be
 
 As [functions are values](../functions/functions-as-values), you can store functions in structs as a value:
 
-```
+```nc
 struct Fraction {
   int numerator
   int denominator
@@ -92,7 +92,7 @@ As the function is being used as a value, it must be included in every initialis
 
 Additionally, since these functions are used as values, you cannot declare them inline, and you must declare them during initialisation. This can have some benefits, such as including different implementations for different structs of the same type:
 
-```
+```nc
 struct MyStruct {
   int val
   (fn(Self, int) -> int) function

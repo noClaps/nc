@@ -2,13 +2,13 @@
 
 Optional values can be declared by adding a `?` to the end of the type name. This declares that the variable may not have some value, but since this language is strictly typed, all cases must be handled if the value is used somewhere. You can use the `none` keyword to initialise a variable without a value:
 
-```
+```nc
 int? myNum = none
 ```
 
 However, this will not be directly compatible with the regular type, and so a check must be done first to ensure that the value exists before it can be used.
 
-```
+```nc
 fn optAddNum(int a, int? b) -> int {
   if b == none {
     return a
@@ -21,7 +21,7 @@ fn optAddNum(int a, int? b) -> int {
 
 However, if the check is not done, an error is thrown:
 
-```
+```nc
 fn optAddNum(int a, int? b) {
   return a + b // error: none case not handled
 }
@@ -29,7 +29,7 @@ fn optAddNum(int a, int? b) {
 
 Since optional values are technically a superset of regular values, you can pass regular values to optionals, but the opposite is not true.
 
-```
+```nc
 int? num1 = 7 // this is okay
 int num2 = none // error: cannot assign none to a non-optional value
 

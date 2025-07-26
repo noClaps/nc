@@ -2,7 +2,7 @@
 
 You can pass a function as an argument to other functions, or assign them as values to variables.
 
-```
+```nc
 // Don't need the full function signature in the type as this is a function definition
 fn add = fn(int a, int b) -> int {
   return a + b
@@ -22,7 +22,7 @@ answer == 8
 
 Whenever a function signature is used as a type, it must be surrounded with parentheses `(fn(<type> arg1, <type> arg2, ...) -> <return type>)`. For example:
 
-```
+```nc
 struct Calculator {
   (fn(int, int) -> int) add,
   (fn(int, int) -> int) substract,

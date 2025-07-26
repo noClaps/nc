@@ -2,7 +2,7 @@
 
 Booleans are represented by the `bool` type, and can only be one of two values: `true` and `false`.
 
-```
+```nc
 bool isLangCool = true
 bool isLangLame = false
 ```

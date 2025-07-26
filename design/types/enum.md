@@ -2,7 +2,7 @@
 
 Enums allow you to have a set of named values, behaving similarly to enums in languages like TypeScript. You can define an enum using the `enum` keyword and a label, which will become the type name.
 
-```
+```nc
 enum Status {
   Pending
   Complete
@@ -12,7 +12,7 @@ enum Status {
 
 You can access enum members with `<enum>.<member>`. You can then use this in your code:
 
-```
+```nc
 fn checkStatus(Status st) -> str {
   match st {
     Pending -> { return "pending" }
@@ -34,7 +34,7 @@ print(didFail(stat2)) // true
 
 Enums allow you to define different states of an object. For example, if you were making Conway's Game of Life, you may want to encode the cell state using an enum instead of a boolean, for clarity:
 
-```
+```nc
 enum CellState {
   Alive
   Dead
@@ -43,7 +43,7 @@ enum CellState {
 
 You would then use this in your code:
 
-```
+```nc
 mut CellState[][] board = [[...]]
 
 for row in board {

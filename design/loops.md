@@ -2,7 +2,7 @@
 
 ## For loops
 
-```
+```nc
 for i in 1:20 {
   print(i) // Prints 1, 2, 3, ..., 20
 }
@@ -20,7 +20,7 @@ For loops will always loop over an [array](./types/array):
 
 ## While loops
 
-```
+```nc
 mut int j = 2
 while j > 0 {
   j--
@@ -34,7 +34,7 @@ There are `break` and `continue` keywords for breaking out of the loop, and skip
 
 However, if you have a label on your loop, you can put the label name after `break` or `continue` to break or continue from that label. This is very useful if you have nested loops, for instance.
 
-```
+```nc
 int[][] table = [[...]]
 
 rows: for row in table {

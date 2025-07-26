@@ -4,7 +4,7 @@ The `type` type is a special data type that allows other types to be passed into
 
 For example, you could declare your own custom types based on the existing types:
 
-```
+```nc
 type customStringType = str
 
 // `customStringType` can now be used as a distinct type from `str`
@@ -12,7 +12,7 @@ type customStringType = str
 
 You could also use them as function arguments:
 
-```
+```nc
 fn decode(str data, type outType) -> (outType, error) {}
 ```
 

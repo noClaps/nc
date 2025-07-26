@@ -2,14 +2,14 @@
 
 Comments start with `//` and can be in the middle or end of a line.
 
-```
+```nc
 // This is a comment
 int a = 2 // This is a comment after a statement
 ```
 
 Doc comments can be written with `///`:
 
-```
+```nc
 import "std/math"
 
 /// The value of pi

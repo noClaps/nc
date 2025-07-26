@@ -2,7 +2,7 @@
 
 If a function throws an error, it must be declared in the function definition with an exclamation mark on the return type:
 
-```
+```nc
 fn addThrows(int a, int b) -> int! {
   if a < b {
     panic("first argument cannot be less than second argument")
@@ -14,7 +14,7 @@ fn addThrows(int a, int b) -> int! {
 
 Throwing functions must be called with `try`:
 
-```
+```nc
 int c = try addThrows(3, 5) // throws
 int d = try addThrows(5, 2)
 
@@ -23,7 +23,7 @@ d == 7
 
 Any function that calls another function marked with `try` must itself be declared as a throwing function.
 
-```
+```nc
 fn calc(int a, int b, str op) -> int! { // marked as throwing
   match op {
     "+" -> { return try addThrows(a, b) }
@@ -33,7 +33,7 @@ fn calc(int a, int b, str op) -> int! { // marked as throwing
 
 If a function throws but does not return anything, it can be marked as throwing with `-> !`:
 
-```
+```nc
 fn isValid(str source, str check) -> ! { // marked as throwing without return value
   if source != check {
     panic("Not valid")
@@ -43,7 +43,7 @@ fn isValid(str source, str check) -> ! { // marked as throwing without return va
 
 Functions that throw will immediately exit out of the program if they error. If you want to handle errors differently, you must return them as values from the function, usually in a [tuple](../types/tuple), and catch them with the `catch` keyword:
 
-```
+```nc
 fn addError(int a, int b) -> (int, error) {
   if a < b {
     return (0, error("first argument cannot be less than second argument"))
@@ -62,7 +62,7 @@ int c = addError(3, 5) catch err {
 
 Alternatively, you can handle the error inside the function, and simply return `none`:
 
-```
+```nc
 fn addOpt(int a, int b) -> int? {
   if a < b {
     print("first argument cannot be less than second argument")

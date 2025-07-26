@@ -1,10 +1,16 @@
 import { defineConfig } from "vitepress";
+import nc from "./shiki/nc.json" with { type: "json" };
 
 export default defineConfig({
   title: "NC",
   description: "A new language I'm working on",
   cleanUrls: true,
-  markdown: { math: true },
+  markdown: {
+    math: true,
+    shikiSetup: async (shiki) => {
+      await shiki.loadLanguage(nc as any);
+    },
+  },
   rewrites: { "README.md": "index.md" },
   lastUpdated: true,
   themeConfig: {
@@ -65,8 +71,8 @@ export default defineConfig({
               { text: "Range", link: "/range" },
               { text: "String", link: "/string" },
               { text: "Struct", link: "/struct" },
-              { text: "Type", link: "/type" },
               { text: "Tuple", link: "/tuple" },
+              { text: "Type", link: "/type" },
               { text: "Union", link: "/union" },
             ],
           },

@@ -6,7 +6,7 @@ The `int` type will be a 64-bit signed integer type. There will also be a `uint`
 
 You can declare `int`s by simply writing a number without a decimal point, or converting from a different type by using the `int()` function:
 
-```
+```nc
 int myNum = 1
 int myNum = int(1)
 ```
@@ -15,7 +15,7 @@ int myNum = int(1)
 
 A `uint` will need a `u` at the end of the number, or the `uint()` function can be called to convert an `int` to a `uint`:
 
-```
+```nc
 uint myNum = 1u // cannot be negative
 uint myNum = uint(1) // equivalent to the above expression
 ```
@@ -30,7 +30,7 @@ There will also be an arbitrary-precision integer type called `bigint`, which wi
 
 You can declare a `bigint` by calling the `bigint()` function on an `int` or `uint`, or by adding an `n` to the end of the number:
 
-```
+```nc
 bigint myBigInt = 1n
 bigint myBigInt = bigint(1) // equivalent to the above expression
 bigint myBigInt = bigint(1u) // you can also convert uints

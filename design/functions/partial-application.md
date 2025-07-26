@@ -1,6 +1,6 @@
 # Partial application
 
-```
+```nc
 fn add(int a, int b) -> int {
   return a + b
 }
@@ -12,7 +12,7 @@ int c = addA(2) // 3
 
 This can be useful to create functions from a base "template" function. For example, if you were creating an HTML library, you might use a function `el(str tag, str content)` as a base, and build all of your elements off of that:
 
-```
+```nc
 fn el(str tag, str content) -> str {
   return "<{tag}>{content}</{tag}>"
 }

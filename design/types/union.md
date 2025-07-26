@@ -2,7 +2,7 @@
 
 Unions allow a value to potentially have multiple types.
 
-```
+```nc
 union Number {
   int,
   decimal, // trailing comma allowed
@@ -13,7 +13,7 @@ Note that the `Number` type defined by the union is not directly compatible with
 
 In order to get the constituent type information out of the union, you can do a `match` on the type like so:
 
-```
+```nc
 Number a = 3.14 // The type is Number, but it's a decimal inside
 
 match typeof(a) { // typeof() is a builtin function

@@ -4,7 +4,7 @@
 
 These are functions that take in a file as the first input and an arbitrary number of values, and write those outputs to the file. The values are formatted according to the `str()` function defined on that type.
 
-```
+```nc
 fn fprint(file f, ...)
 ```
 
@@ -12,7 +12,7 @@ fn fprint(file f, ...)
 
 These functions call `fprint()` and with the output file set to be `stdout`. The difference between `print()` and `println()` is that `println()` appends a newline at the end of the output.
 
-```
+```nc
 fn print(...) {
   fprint(os.stdout, ...)
 }
@@ -25,7 +25,7 @@ fn println(...) {
 
 These functions call `fprint()` and with the output file set to be `stderr`. The difference between `eprint()` and `eprintln()` is that `eprintln()` appends a newline at the end of the output. These functions are generally used for print debugging.
 
-```
+```nc
 fn eprint(...) {
   fprint(os.stderr, ...)
 }
@@ -38,7 +38,7 @@ fn eprintln(...) {
 
 This returns the type of a value.
 
-```
+```nc
 fn typeof(val) -> type
 ```
 
@@ -46,7 +46,7 @@ fn typeof(val) -> type
 
 This is a function that takes in a boolean as the first argument, and a string as the second argument. If the boolean is false, it halts the program with an assertion error and a stacktrace, and the string as an error message.
 
-```
+```nc
 fn assert(bool check, str message) -> ! {
   if !check {
     panic("ERROR: {message}")
@@ -60,7 +60,7 @@ Note that although this function panics, you do not need to call it with `try`.
 
 This function takes in a string as an argument, and crashes the program whenever it is called, displaying the string passed in as an error message. If a function in your code uses `panic()`, it must have a `!` in its return type, and must be called with the `try` keyword.
 
-```
+```nc
 fn panic(str message) -> !
 ```
 
@@ -81,6 +81,6 @@ If you define a type of your own, you need to define these functions for that ty
 
 This function takes in a type as an argument, and creates a value of that type.
 
-```
+```nc
 fn new(type anyType) -> anyType
 ```

@@ -4,21 +4,21 @@ All operators (except the pipe operator) will require its arguments to be of the
 
 ## Logical
 
-```
+```nc
 // and
 true && true // true
 true && false // false
 false && false // false
 ```
 
-```
+```nc
 // or
 true || true // true
 true || false // true
 false || false // false
 ```
 
-```
+```nc
 // not
 !true // false
 !false // true
@@ -28,17 +28,17 @@ false || false // false
 
 Because strings are arrays of characters, the concatenation operator is the same for both. This operator can only apply to arrays and strings, it will error if used with any other type.
 
-```
+```nc
 [a, b, c] <> [d, e, f] == [a, b, c, d, e, f]
 ```
 
-```
+```nc
 "Hello" <> " " <> "world" == "Hello world"
 ```
 
 You can also use the concatenation operator between maps, provided that they are of the same type:
 
-```
+```nc
 [str]int monthsToNum1 = ["jan": 1, "feb": 2, "mar": 3]
 [str]int monthsToNum2 = ["apr": 4, "may": 5, "jun": 6]
 [str]int monthsToNum3 = ["jul": 7, "aug": 8, "sep": 9]
@@ -53,28 +53,28 @@ monthsToNum <> differentType // error: cannot concatenate maps of different type
 
 ## Arithmetic
 
-```
+```nc
 // addition
 1 + 2 == 3
 ```
 
-```
+```nc
 // substraction
 2 - 1 == 1
 ```
 
-```
+```nc
 // division
 5 / 2 == 2
 5.0 / 2.0 == 2.5
 ```
 
-```
+```nc
 // exponent
 2 ** 6 == 64
 ```
 
-```
+```nc
 // modulo
 10 % 4 == 2
 ```
@@ -93,39 +93,39 @@ The combination of algorithms being used for multiplication, as well as the thre
 
 The syntax will be similar to other languages, no surprises there:
 
-```
+```nc
 3 * 2
 ```
 
 ## Comparisons
 
-```
+```nc
 // equality
 1 == 1
 ```
 
-```
+```nc
 // inequality
 1 != 2
 ```
 
-```
+```nc
 // less than
 1 < 2
 ```
 
-```
+```nc
 // greater than
 1 > 0
 ```
 
-```
+```nc
 // less than or equal to
 5 <= 6
 5 <= 5
 ```
 
-```
+```nc
 // greater than or equal to
 7 >= 4
 7 >= 7
@@ -135,32 +135,32 @@ The syntax will be similar to other languages, no surprises there:
 
 Bit arithmetic will only be allowed for integers.
 
-```
+```nc
 // bit shift left
 1 << 4 == 16
 ```
 
-```
+```nc
 // bit shift right
 6 >> 1 == 3
 ```
 
-```
+```nc
 // bitwise and
 27 & 1 == 1
 ```
 
-```
+```nc
 // bitwise or
 8 | 1 == 9
 ```
 
-```
+```nc
 // bitwise xor
 12 ^ 1 == 13
 ```
 
-```
+```nc
 // bitwise not
 ~6 == -7
 ```
@@ -169,7 +169,7 @@ Bit arithmetic will only be allowed for integers.
 
 Similar to functional programming, we can use a `|>` pipe operator to pass values from one function to the next. This will automatically fill in the first value of the receiving function with the value being passed into it. For example, something like this:
 
-```
+```nc
 fn square(int[] numbers) -> int[] {
   mut int[] numbers = numbers
 
@@ -197,7 +197,7 @@ numbers = addToAll(numbers, 5) // [6, 10, 15, 21, 30]
 
 can be turned into a pipeline, like so:
 
-```
+```nc
 // Same function definitions as above
 
 int[] numbers = [1, 2, 3, 4, 5]
@@ -207,7 +207,7 @@ int[] numbers = [1, 2, 3, 4, 5]
 
 While this may seem pointless for a simple case like this, it becomes incredibly helpful for situations where a piece of data needs to be passed around a lot. For example:
 
-```
+```nc
 // Some data to be transformed
 DataStruct[] newData = data
                          |> map(someFn)

@@ -2,7 +2,7 @@
 
 Maps are similar to arrays except that you can have a custom key type, instead of it being an integer. The syntax for declaring a map is `[<key type>]<value type>`. So, for example, a map with a string key and a decimal value would be declared as:
 
-```
+```nc
 [str]decimal myMap = [
   "string1": 1d,
   "string2": 2d,
@@ -13,13 +13,13 @@ Maps are similar to arrays except that you can have a custom key type, instead o
 
 Trailing commas are allowed in map declarations. Similar to arrays, you can access the length of the map with `<map>.len`. Values of a map can be accessed with `<map>[<key>]`. For example, for the map above, we can access the value corresponding to `"string5"` with:
 
-```
+```nc
 myMap["string5"] // 5.0
 ```
 
 If the map is mutable, you can write to the map using the same syntax:
 
-```
+```nc
 mut [str]decimal myMap = [
   // same as above
 ]
@@ -29,7 +29,7 @@ myMap["string11"] = 11.0
 
 You can use a `for` loop to loop through the keys of a map:
 
-```
+```nc
 for key in myMap {
   print(key, value)
 }
@@ -50,7 +50,7 @@ Maps are implemented using [Swiss tables](https://abseil.io/about/design/swissta
 
 Maps differ from objects in that they don't have methods, but you can use [functions as values](../functions/functions-as-values) to store functions in a map:
 
-```
+```nc
 [str](fn(int, int) -> int) myFunctionMap = [
   "add": fn(int a, int b) -> int { return a + b }
   "multiply": fn(int a, int b) -> int { return a * b }

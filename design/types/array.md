@@ -2,7 +2,7 @@
 
 Arrays are defined as a struct of the length and the array itself:
 
-```
+```nc
 struct Array {
   uint len
   uint cap
@@ -12,7 +12,7 @@ struct Array {
 
 While this may seem recursive, this is only the internal representation, for you, the array will look like any normal array:
 
-```
+```nc
 int[] myNums = [1, 2, 3, 4, 5]
 ```
 
@@ -20,7 +20,7 @@ You can have an array of any type, simply by adding a `[]` to the end of the typ
 
 The values of the array are immutable unless the `mut` keyword is used, and arrays are strictly typed, so you can only have one type of value in an array.
 
-```
+```nc
 int[] nums = [1, 2, 3, 4, 5]
 nums[2] = 10 // error: mutating immutable value
 
@@ -32,7 +32,7 @@ All arrays are dynamically sized, and would usually be called "lists" in other l
 
 Arrays are 0-indexed, so the first value of the array is at the 0th index. Negative indexing is not allowed, but you can use `$` to signify the last index of the array, basically equivalent to the `array.len-1` value. You can also count backwards by subtracting from `$`.
 
-```
+```nc
 int[] nums = [1, 2, 3, 4, 5]
 nums[0] == 1
 nums[1] == 2
