@@ -44,12 +44,17 @@ fn typeof(val) -> type
 
 ## `assert()`
 
-This is a function that takes in a boolean as the first argument, and a string as the second argument. If the boolean is false, it halts the program with an assertion error and a stacktrace, and the string as an error message.
+This is a function that takes in a boolean as the first argument, and optionally a string as the second argument. If the boolean is false, it halts the program with an assertion error and a stacktrace, and the string as an error message.
 
 ```nc
 fn assert(bool check, str message) -> ! {
   if not check {
     panic("ERROR: {message}")
+  }
+}
+fn assert(bool check) -> ! {
+  if not check {
+    panic("ERROR: Assertion failed")
   }
 }
 ```
