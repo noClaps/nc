@@ -27,10 +27,10 @@ mut [str]decimal myMap = [
 myMap["string11"] = 11.0
 ```
 
-You can use a `for` loop to loop through the keys of a map:
+You can use a `for` loop to loop through the keys and values of a map:
 
 ```nc
-for key in myMap {
+for key, value in myMap {
   print(key, value)
 }
 // string1 1.0
