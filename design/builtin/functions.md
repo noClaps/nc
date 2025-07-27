@@ -48,7 +48,7 @@ This is a function that takes in a boolean as the first argument, and a string a
 
 ```nc
 fn assert(bool check, str message) -> ! {
-  if !check {
+  if not check {
     panic("ERROR: {message}")
   }
 }

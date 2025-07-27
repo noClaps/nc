@@ -6,22 +6,22 @@ All operators (except the pipe operator) will require its arguments to be of the
 
 ```nc
 // and
-true && true // true
-true && false // false
-false && false // false
+true and true // true
+true and false // false
+false and false // false
 ```
 
 ```nc
 // or
-true || true // true
-true || false // true
-false || false // false
+true or true // true
+true or false // true
+false or false // false
 ```
 
 ```nc
 // not
-!true // false
-!false // true
+not true // false
+not false // true
 ```
 
 ## Concatenation

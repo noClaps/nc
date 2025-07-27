@@ -35,6 +35,12 @@
 - `import`: This is used to [import](../modules) modules from other files or libraries.
 - `as`: This is used to [alias imports](../modules#import-aliases) to give them custom names, instead of depending on the filename.
 
+## Operators
+
+- `and`: This is the boolean [AND operator](../operators#logical).
+- `or`: This is the boolean [OR operator](../operators#logical).
+- `not`: This is the boolean [NOT operator](../operators#logical).
+
 ## Other
 
 - `return`: This is used to return values from a block. This can be returning values from a function, or returning a value from a conditional block into a variable, like an `if-else` statement or `match` statement.
