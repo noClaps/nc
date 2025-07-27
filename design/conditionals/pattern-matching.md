@@ -35,7 +35,7 @@ match myNum {
 }
 ```
 
-You can also use functions and methods in match statements, as long as they return a boolean, and the value being checked is the first parameter:
+You can also use functions in match statements, as long as they return a boolean, and the value being checked is the first parameter:
 
 ```nc
 fn checkIfAnimal(str animal, str check) -> boolean {
@@ -63,13 +63,6 @@ match animal {
     // Equivalent to `if checkIfAnimal(animal, "Bird")`
 
     print("Chirp")
-  }
-
-  .startsWith("B") -> {
-    // Can have methods of the type, for example str.startsWith()
-    // Equivalent to `if animal.startsWith("B")`
-
-    print("Starts with a B")
   }
 
   else -> {

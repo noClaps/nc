@@ -47,17 +47,3 @@ for key in myMap {
 ```
 
 Maps are implemented using [Swiss tables](https://abseil.io/about/design/swisstables) for high read/write performance.
-
-Maps differ from objects in that they don't have methods, but you can use [functions as values](../functions/functions-as-values) to store functions in a map:
-
-```nc
-[str](fn(int, int) -> int) myFunctionMap = [
-  "add": fn(int a, int b) -> int { return a + b }
-  "multiply": fn(int a, int b) -> int { return a * b }
-  // ...
-]
-int sum = myFunctionMap["add"](1, 2)
-sum == 3
-```
-
-All of the function signatures in a map must be the same, as the compiler is unable to determine which function was called at compile time, and so would not be able to type-check the argument and return values.
