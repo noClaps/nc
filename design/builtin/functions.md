@@ -5,7 +5,7 @@
 These are functions that take in a file as the first input and an arbitrary number of values, and write those outputs to the file. The values are formatted according to the `str()` function defined on that type.
 
 ```nc
-fn fprint(file f, ...)
+fn fprint(file f, any[] args...)
 ```
 
 ## `print()` and `println()`
@@ -13,11 +13,11 @@ fn fprint(file f, ...)
 These functions call `fprint()` and with the output file set to be `stdout`. The difference between `print()` and `println()` is that `println()` appends a newline at the end of the output.
 
 ```nc
-fn print(...) {
-  fprint(os.stdout, ...)
+fn print(any[] args...) {
+  fprint(os.stdout, args...)
 }
-fn println(...) {
-  fprint(os.stdout, ..., "\n")
+fn println(any[] args...) {
+  fprint(os.stdout, args..., "\n")
 }
 ```
 
@@ -26,11 +26,11 @@ fn println(...) {
 These functions call `fprint()` and with the output file set to be `stderr`. The difference between `eprint()` and `eprintln()` is that `eprintln()` appends a newline at the end of the output. These functions are generally used for print debugging.
 
 ```nc
-fn eprint(...) {
-  fprint(os.stderr, ...)
+fn eprint(any[] args...) {
+  fprint(os.stderr, args...)
 }
-fn eprintln(...) {
-  fprint(os.stderr, ..., "\n")
+fn eprintln(any[] args...) {
+  fprint(os.stderr, args..., "\n")
 }
 ```
 
@@ -39,7 +39,7 @@ fn eprintln(...) {
 This returns the type of a value.
 
 ```nc
-fn typeof(val) -> type
+fn typeof(any val) -> type
 ```
 
 ## `assert()`

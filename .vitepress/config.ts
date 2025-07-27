@@ -51,12 +51,14 @@ export default defineConfig({
               { text: "Optional arguments", link: "/optional-arguments" },
               { text: "Overloading", link: "/overloading" },
               { text: "Partial application", link: "/partial-application" },
+              { text: "Variadic functions", link: "/variadic" },
             ],
           },
           {
             text: "Types",
             base: "/design/types",
             items: [
+              { text: "Any", link: "/any" },
               { text: "Array", link: "/array" },
               { text: "Boolean", link: "/boolean" },
               { text: "Byte", link: "/byte" },
