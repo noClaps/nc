@@ -15,8 +15,8 @@ for j in 1:2:20 { // You can increment/decrement by other values
 For loops will always loop over an [array](./types/array):
 
 - [Ranges](./types/range) like `1:20` or `1:2:20` are arrays of numbers, and it loops over the values of that array.
-- [Structs](./types/struct) and [maps](./types/map) are converted into an array of [tuples](./types/tuple) of `(member, value)`, and it loops over each of those tuples.
-- Arrays, [strings](./types/string) are looped over by their indices with type [`uint`](./types/int#uint).
+- [Structs](./types/struct) are converted into an array of [tuples](./types/tuple) of `(member, value)`, and it loops over each of those tuples.
+- Arrays, [strings](./types/string) and [maps](./types/map)  are looped over by their indices, [`uint`](./types/int#uint) for arrays and strings, and the key defined for maps.
 
 ## While loops
 
