@@ -22,7 +22,7 @@ fn myFunc(int a, int b) -> (int, int) {
   int c = a + b
   int d = a - b
 
-  return (c, d)
+  return c, d
 }
 
 (int, int) vals = myFunc(2, 4)

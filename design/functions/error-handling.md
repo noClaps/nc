@@ -46,10 +46,10 @@ Functions that throw will immediately exit out of the program if they error. If 
 ```nc
 fn addError(int a, int b) -> (int, error) {
   if a < b {
-    return (0, error("first argument cannot be less than second argument"))
+    return 0, error("first argument cannot be less than second argument")
   }
 
-  return (a + b, none)
+  return a + b, none
 }
 
 // the error goes into the `err` variable, but you can name this whatever you'd like
