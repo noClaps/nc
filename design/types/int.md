@@ -21,7 +21,7 @@ uint myNum = uint(1) // equivalent to the above expression
 ```
 
 ::: warning
-If a value outside the range of `uint` or `int` is passed, it will wrap around to fit within the bounds.
+If a value exceeds the range of `int` or `uint`, the program will panic and crash.
 :::
 
 ## BigInt
