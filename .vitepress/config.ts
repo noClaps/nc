@@ -14,6 +14,7 @@ export default defineConfig({
   rewrites: { "README.md": "index.md" },
   lastUpdated: true,
   themeConfig: {
+    outline: { level: [2, 6] },
     sidebar: [
       {
         text: "Design",
