@@ -49,7 +49,6 @@ export default defineConfig({
               { text: "Error handling", link: "/error-handling" },
               { text: "Functions as values", link: "/functions-as-values" },
               { text: "Named arguments", link: "/named-arguments" },
-              { text: "Optional arguments", link: "/optional-arguments" },
               { text: "Overloading", link: "/overloading" },
               { text: "Partial application", link: "/partial-application" },
               { text: "Variadic functions", link: "/variadic" },
