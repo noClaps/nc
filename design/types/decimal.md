@@ -15,10 +15,11 @@ Given that all numbers have to be rational in traditional programming languages 
 
 Additionally, a struct will generally be slower to work with than a simple floating point value, but I believe the performance cost may be worth it for the accuracy it will bring. The `decimal` data type (which will be slower but with higher accuracy) will be represented with this Fraction structure. However, whenever the value needs to be displayed, such as when it is printed to the screen, it will be printed in decimal form, and can optionally be written in fraction form.
 
-Decimals can be declared with any number that has a decimal point, or by using the `decimal()` function:
+Decimals can be declared with any number, or by using the `decimal()` function:
 
 ```nc
 // All of these have the same output
+decimal myDecimal = 2
 decimal myDecimal = 2.0
 decimal myDecimal = decimal(2)
 decimal myDecimal = decimal(2, 1) // fn decimal(int numerator, int denominator) -> decimal

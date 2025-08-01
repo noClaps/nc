@@ -13,10 +13,10 @@ int myNum = int(1)
 
 ## Uint
 
-A `uint` will need a `u` at the end of the number, or the `uint()` function can be called to convert an `int` to a `uint`:
+A `uint` can be declared similarly to an `int`, and the `uint()` function can be called to convert from a different type:
 
 ```nc
-uint myNum = 1u // cannot be negative
+uint myNum = 1 // cannot be negative
 uint myNum = uint(1) // equivalent to the above expression
 ```
 
@@ -28,12 +28,11 @@ If a value exceeds the range of `int` or `uint`, the program will panic and cras
 
 There will also be an arbitrary-precision integer type called `bigint`, which will be incompatible with the other `int` types, and will be slower. You can convert between `bigint` and `int`, but operations must be between the same type, e.g. you cannot add a `bigint` and an `int`. Converting from `bigint` to `int` will cap the value at the 64-bit signed integer limits.
 
-You can declare a `bigint` by calling the `bigint()` function on an `int` or `uint`, or by adding an `n` to the end of the number:
+You can declare a `bigint` by calling the `bigint()` function to convert it from a different type, or by simply writing the number:
 
 ```nc
-bigint myBigInt = 1n
+bigint myBigInt = 1
 bigint myBigInt = bigint(1) // equivalent to the above expression
-bigint myBigInt = bigint(1u) // you can also convert uints
 ```
 
 If any of the integer conversion functions are used on a decimal, then only the integer part will be returned. So, for example, `int(2.5)` will become `2`.
