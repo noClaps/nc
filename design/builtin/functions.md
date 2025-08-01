@@ -89,3 +89,18 @@ This function takes in a type as an argument, and creates a value of that type.
 ```nc
 fn new(type anyType) -> anyType
 ```
+
+The value created with `new` will be the "zero" value of that type:
+
+- `array`, `map`: `[]`
+- `bool`: `false`
+- `byte`, `char`: `''`
+- `complex`, `decimal`, `int`, `uint`, `bigint`: `0`
+- `enum`: The first value in the enum
+- `error`, `str`: `""`
+- `optional`: `none`
+- `struct`: A struct with the zero values of its constituent types
+- `tuple`: A tuple with the zero values of its constituent types
+- `union`: The zero value of the first type in the union
+
+Generally, you should define your own `new()` functions for your types and use those instead of relying on the built-in zero value definitions.
