@@ -24,3 +24,5 @@ decimal myDecimal = 2.0
 decimal myDecimal = decimal(2)
 decimal myDecimal = decimal(2, 1) // fn decimal(int numerator, int denominator) -> decimal
 ```
+
+There are also ways to create decimals using the [division operator](../operators#division).

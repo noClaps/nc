@@ -64,12 +64,6 @@ monthsToNum <> differentType // error: cannot concatenate maps of different type
 ```
 
 ```nc
-// division
-5 / 2 == 2
-5.0 / 2.0 == 2.5
-```
-
-```nc
 // exponent
 2 ** 6 == 64
 ```
@@ -95,6 +89,50 @@ The syntax will be similar to other languages, no surprises there:
 
 ```nc
 3 * 2
+```
+
+### Division
+
+The division operator can be used to create decimal numbers, and there are a number of different cases to handle for how it will behave.
+
+If the division operator is used to assign to a `decimal`, it will create a `decimal`, but only if the two arguments are literals, and not integer variables:
+
+```nc
+decimal myDec = 5/2
+assert(myDec == decimal(5, 2))
+
+fn someFunc(decimal n) {
+  assert(n == decimal(5, 2))
+}
+someFunc(5/2)
+
+int a = 5
+int b = 2
+decimal myDec = a/b // error: integer value cannot be assigned to decimal
+```
+
+If the arguments to the division operator are both `decimal`s, the output will be a `decimal`. If they are both `int`s, it will be an `int`, etc.
+
+```nc
+int a = 5
+int b = 2
+int c = a/b
+assert(c == 2)
+
+decimal a = 5
+decimal b = 2
+decimal c = a/b
+assert(c == 2.5)
+```
+
+If the division operator is being used to assign to an `any` function parameter, the arguments will first be parsed as integers, and then decimals:
+
+```nc
+fn someFunc(any a) {
+  println(a, typeof(a))
+}
+someFunc(5/2) // 2 int
+someFunc(5.0/2.0) // 2.5 decimal
 ```
 
 ## Comparisons
