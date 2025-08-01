@@ -7,6 +7,7 @@
 ## Functions
 - `fn`: This is a [function](../functions/) definition.
 - `try`: This is a keyword that is required to call a function that may throw. It doesn't do anything specific on its own, however it makes it clear to someone reading the code that the function they're calling could throw. It also colors the function it's being called in, and that containing function also becomes a throwing function. See [error handling](../functions/error-handling) for details.
+- `catch`: This is a keyword that allows you to catch an error returned by a function without needing to declare it as a variable and handling it on a separate line. It only works for functions with the type `fn(...) -> (..., error)` See [error handling](../functions/error-handling) for details.
 
 ## Types
 
