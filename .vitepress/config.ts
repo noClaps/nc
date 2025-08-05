@@ -46,6 +46,7 @@ export default defineConfig({
             base: "/design/functions",
             link: "/",
             items: [
+              { text: "Contracts", link: "/contracts" },
               { text: "Error handling", link: "/error-handling" },
               { text: "Functions as values", link: "/functions-as-values" },
               { text: "Named arguments", link: "/named-arguments" },
