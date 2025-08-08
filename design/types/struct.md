@@ -4,8 +4,8 @@ There are no classes in the language, so structs are the next best option. Struc
 
 ```nc
 struct Fraction {
-  int numerator
-  int denominator
+  int numerator,
+  int denominator,
 }
 
 Fraction myFrac = {.numerator: 10, .denominator: 31}

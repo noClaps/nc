@@ -4,9 +4,9 @@ Enums allow you to have a set of named values, behaving similarly to enums in la
 
 ```nc
 enum Status {
-  Pending
-  Complete
-  Failed
+  Pending,
+  Complete,
+  Failed,
 }
 ```
 
@@ -36,8 +36,8 @@ Enums allow you to define different states of an object. For example, if you wer
 
 ```nc
 enum CellState {
-  Alive
-  Dead
+  Alive,
+  Dead,
 }
 ```
 

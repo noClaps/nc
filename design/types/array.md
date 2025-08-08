@@ -4,9 +4,9 @@ Arrays are defined as a struct of the length and the array itself:
 
 ```nc
 struct Array {
-  uint len
-  uint cap
-  <type>[] vals
+  uint len,
+  uint cap,
+  <type>[] vals,
 }
 ```
 

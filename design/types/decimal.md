@@ -6,8 +6,8 @@ In math, any rational decimal value can be represented as a fraction. For exampl
 
 ```nc
 struct Fraction {
-  int numerator
-  int denominator
+  int numerator,
+  int denominator,
 }
 ```
 

@@ -5,7 +5,7 @@ Unions allow a value to potentially have multiple types.
 ```nc
 union Number {
   int,
-  decimal, // trailing comma allowed
+  decimal,
 }
 ```
 

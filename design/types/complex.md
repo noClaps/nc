@@ -4,8 +4,8 @@ Complex numbers are represented by the `complex` type, and are defined as a coll
 
 ```nc
 struct complex {
-  decimal real
-  decimal imag
+  decimal real,
+  decimal imag,
 }
 ```
 
