@@ -46,7 +46,6 @@ export default defineConfig({
             base: "/design/functions",
             link: "/",
             items: [
-              { text: "Contracts", link: "/contracts" },
               { text: "Error handling", link: "/error-handling" },
               { text: "Functions as values", link: "/functions-as-values" },
               { text: "Named arguments", link: "/named-arguments" },
@@ -58,7 +57,6 @@ export default defineConfig({
             text: "Types",
             base: "/design/types",
             items: [
-              { text: "Any", link: "/any" },
               { text: "Array", link: "/array" },
               { text: "Boolean", link: "/boolean" },
               { text: "Byte", link: "/byte" },

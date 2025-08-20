@@ -3,7 +3,7 @@
 Sometimes a function, like [`print`](../builtin/functions#print-and-println), needs to take an arbitrary number of arguments. In cases like this, variadic functions can be used:
 
 ```nc
-fn print(any[] args...) {
+fn print(str[] args...) {
   // ...
 }
 ```

@@ -125,16 +125,6 @@ decimal c = a/b
 assert(c == 2.5)
 ```
 
-If the division operator is being used to assign to an `any` function parameter, the arguments will first be parsed as integers, and then decimals:
-
-```nc
-fn someFunc(any a) {
-  println(a, typeof(a))
-}
-someFunc(5/2) // 2 int
-someFunc(5.0/2.0) // 2.5 decimal
-```
-
 ## Comparisons
 
 ```nc

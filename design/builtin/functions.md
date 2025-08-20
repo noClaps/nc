@@ -2,10 +2,10 @@
 
 ## `fprint()`
 
-These are functions that take in a file as the first input and an arbitrary number of values, and write those outputs to the file. The values are formatted according to the `str()` function defined on that type.
+This is a function that takes in a file as the first input and a string as the second input, and writes that string to the file.
 
 ```nc
-fn fprint(file f, any[] args...)
+fn fprint(file f, str value)
 ```
 
 ## `print()` and `println()`
@@ -13,11 +13,11 @@ fn fprint(file f, any[] args...)
 These functions call `fprint()` and with the output file set to be `stdout`. The difference between `print()` and `println()` is that `println()` appends a newline at the end of the output.
 
 ```nc
-fn print(any[] args...) {
-  fprint(os.stdout, args...)
+fn print(str value) {
+  fprint(os.stdout, value)
 }
-fn println(any[] args...) {
-  fprint(os.stdout, args..., "\n")
+fn println(str value) {
+  fprint(os.stdout, value <> "\n")
 }
 ```
 
@@ -26,11 +26,11 @@ fn println(any[] args...) {
 These functions call `fprint()` and with the output file set to be `stderr`. The difference between `eprint()` and `eprintln()` is that `eprintln()` appends a newline at the end of the output. These functions are generally used for print debugging.
 
 ```nc
-fn eprint(any[] args...) {
-  fprint(os.stderr, args...)
+fn eprint(str value) {
+  fprint(os.stderr, value)
 }
-fn eprintln(any[] args...) {
-  fprint(os.stderr, args..., "\n")
+fn eprintln(str value) {
+  fprint(os.stderr, value <> "\n")
 }
 ```
 
@@ -39,7 +39,7 @@ fn eprintln(any[] args...) {
 This returns the type of a value.
 
 ```nc
-fn typeof(any val) -> type
+fn typeof(value) -> type
 ```
 
 ## `assert()`
