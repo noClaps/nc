@@ -1,10 +1,12 @@
 # Keywords
 
 ## Conditionals
+
 - `if`, `else if`, `else`: These are used for [basic conditionals](../conditionals/if-else).
 - `match`, `else`: These are used for [pattern matching](../conditionals/pattern-matching).
 
 ## Functions
+
 - `fn`: This is a [function](../functions/) definition.
 - `try`: This is a keyword that is required to call a function that may throw. It doesn't do anything specific on its own, however it makes it clear to someone reading the code that the function they're calling could throw. It also colors the function it's being called in, and that containing function also becomes a throwing function. See [error handling](../functions/error-handling) for details.
 - `catch`: This is a keyword that allows you to catch an error returned by a function without needing to declare it as a variable and handling it on a separate line. It only works for functions with the type `fn(...) -> (..., error)` See [error handling](../functions/error-handling) for details.
@@ -41,6 +43,11 @@
 - `and`: This is the boolean [AND operator](../operators#logical).
 - `or`: This is the boolean [OR operator](../operators#logical).
 - `not`: This is the boolean [NOT operator](../operators#logical).
+
+## Async
+
+- `async`: This marks a function call as asynchronous, and returns a Future. See [async](../async) for details.
+- `await`: This awaits a Future to block execution until it resolves and gets a value out. See [async](../async) for details.
 
 ## Other
 

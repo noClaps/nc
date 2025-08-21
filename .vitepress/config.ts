@@ -20,6 +20,7 @@ export default defineConfig({
         text: "Design",
         base: "/design",
         items: [
+          { text: "Async", link: "/async" },
           { text: "Comments", link: "/comments" },
           { text: "Loops", link: "/loops" },
           { text: "Modules", link: "/modules" },
