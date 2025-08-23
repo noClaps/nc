@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import type { LanguageInput } from "@shikijs/types";
 import nc from "./shiki/nc.json" with { type: "json" };
 
 export default defineConfig({
@@ -8,7 +9,7 @@ export default defineConfig({
   markdown: {
     math: true,
     shikiSetup: async (shiki) => {
-      await shiki.loadLanguage(nc as any);
+      await shiki.loadLanguage(nc as LanguageInput);
     },
   },
   rewrites: { "README.md": "index.md" },

@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@shikijs/types@^3.11.0": "3.11.0",
     "npm:markdown-it-mathjax3@^4.3.2": "4.3.2",
     "npm:vitepress@^1.6.4": "1.6.4_markdown-it-mathjax3@4.3.2_vite@5.4.19_vue@3.5.19_focus-trap@7.6.5"
   },
@@ -416,7 +417,7 @@
       "dependencies": [
         "@shikijs/engine-javascript",
         "@shikijs/engine-oniguruma",
-        "@shikijs/types",
+        "@shikijs/types@2.5.0",
         "@shikijs/vscode-textmate",
         "@types/hast",
         "hast-util-to-html"
@@ -425,7 +426,7 @@
     "@shikijs/engine-javascript@2.5.0": {
       "integrity": "sha512-VjnOpnQf8WuCEZtNUdjjwGUbtAVKuZkVQ/5cHy/tojVVRIRtlWMYVjyWhxOmIq05AlSOv72z7hRNRGVBgQOl0w==",
       "dependencies": [
-        "@shikijs/types",
+        "@shikijs/types@2.5.0",
         "@shikijs/vscode-textmate",
         "oniguruma-to-es"
       ]
@@ -433,31 +434,38 @@
     "@shikijs/engine-oniguruma@2.5.0": {
       "integrity": "sha512-pGd1wRATzbo/uatrCIILlAdFVKdxImWJGQ5rFiB5VZi2ve5xj3Ax9jny8QvkaV93btQEwR/rSz5ERFpC5mKNIw==",
       "dependencies": [
-        "@shikijs/types",
+        "@shikijs/types@2.5.0",
         "@shikijs/vscode-textmate"
       ]
     },
     "@shikijs/langs@2.5.0": {
       "integrity": "sha512-Qfrrt5OsNH5R+5tJ/3uYBBZv3SuGmnRPejV9IlIbFH3HTGLDlkqgHymAlzklVmKBjAaVmkPkyikAV/sQ1wSL+w==",
       "dependencies": [
-        "@shikijs/types"
+        "@shikijs/types@2.5.0"
       ]
     },
     "@shikijs/themes@2.5.0": {
       "integrity": "sha512-wGrk+R8tJnO0VMzmUExHR+QdSaPUl/NKs+a4cQQRWyoc3YFbUzuLEi/KWK1hj+8BfHRKm2jNhhJck1dfstJpiw==",
       "dependencies": [
-        "@shikijs/types"
+        "@shikijs/types@2.5.0"
       ]
     },
     "@shikijs/transformers@2.5.0": {
       "integrity": "sha512-SI494W5X60CaUwgi8u4q4m4s3YAFSxln3tzNjOSYqq54wlVgz0/NbbXEb3mdLbqMBztcmS7bVTaEd2w0qMmfeg==",
       "dependencies": [
         "@shikijs/core",
-        "@shikijs/types"
+        "@shikijs/types@2.5.0"
       ]
     },
     "@shikijs/types@2.5.0": {
       "integrity": "sha512-ygl5yhxki9ZLNuNpPitBWvcy9fsSKKaRuO4BAlMyagszQidxcpLAr0qiW/q43DtSIDxO6hEbtYLiFZNXO/hdGw==",
+      "dependencies": [
+        "@shikijs/vscode-textmate",
+        "@types/hast"
+      ]
+    },
+    "@shikijs/types@3.11.0": {
+      "integrity": "sha512-RB7IMo2E7NZHyfkqAuaf4CofyY8bPzjWPjJRzn6SEak3b46fIQyG6Vx5fG/obqkfppQ+g8vEsiD7Uc6lqQt32Q==",
       "dependencies": [
         "@shikijs/vscode-textmate",
         "@types/hast"
@@ -1081,7 +1089,7 @@
         "@shikijs/engine-oniguruma",
         "@shikijs/langs",
         "@shikijs/themes",
-        "@shikijs/types",
+        "@shikijs/types@2.5.0",
         "@shikijs/vscode-textmate",
         "@types/hast"
       ]
@@ -1202,7 +1210,7 @@
         "@iconify-json/simple-icons",
         "@shikijs/core",
         "@shikijs/transformers",
-        "@shikijs/types",
+        "@shikijs/types@2.5.0",
         "@types/markdown-it",
         "@vitejs/plugin-vue",
         "@vue/devtools-api",
@@ -1263,6 +1271,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@shikijs/types@^3.11.0",
         "npm:markdown-it-mathjax3@^4.3.2",
         "npm:vitepress@^1.6.4"
       ]
