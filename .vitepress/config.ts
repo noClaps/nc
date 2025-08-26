@@ -1,5 +1,5 @@
-import { defineConfig } from "vitepress";
 import type { LanguageInput } from "@shikijs/types";
+import { defineConfig } from "vitepress";
 import nc from "./shiki/nc.json" with { type: "json" };
 
 export default defineConfig({
@@ -82,6 +82,6 @@ export default defineConfig({
       },
     ],
     search: { provider: "local" },
-    socialLinks: [{ icon: "github", link: "https://github.com/noClaps/nc" }],
+    socialLinks: [{ icon: "git", link: "https://github.com/noClaps/nc" }],
   },
 });
