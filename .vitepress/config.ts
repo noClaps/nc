@@ -82,6 +82,8 @@ export default defineConfig({
       },
     ],
     search: { provider: "local" },
-    socialLinks: [{ icon: "git", link: "https://github.com/noClaps/nc" }],
+    socialLinks: [
+      { icon: "git", link: "https://tangled.sh/@zerolimits.dev/nc" },
+    ],
   },
 });
