@@ -1,5 +1,6 @@
 :root {
     --vp-c-brand-1: #ff732e;
+    --vp-c-brand-2: #df530e;
     --vp-c-bg: light-dark(#eee, #222);
     --vp-c-bg-alt: light-dark(#ddd, #333);
     --vp-c-divider: light-dark(#bbb, #666);
