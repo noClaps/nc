@@ -75,7 +75,6 @@ export default defineConfig({
               { text: "Struct", link: "/struct" },
               { text: "Tuple", link: "/tuple" },
               { text: "Type", link: "/type" },
-              { text: "Union", link: "/union" },
             ],
           },
         ],

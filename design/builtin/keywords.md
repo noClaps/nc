@@ -24,7 +24,6 @@
 - `str`: This is a builtin type for [strings](../types/string).
 - `struct`: This is a keyword for defining [structs](../types/struct).
 - `type`: This is a keyword for defining [types](../types/type).
-- `union`: This is a keyword for defining a [union type](../types/union).
 - `mut`: This keyword allows a value to be [mutable](../variables). It can be used with any type.
 
 ## Loops
