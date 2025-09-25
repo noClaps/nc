@@ -34,8 +34,8 @@
 
 ## Modules
 
-- `import`: This is used to [import](../modules) modules from other files or libraries.
-- `as`: This is used to [alias imports](../modules#import-aliases) to give them custom names, instead of depending on the filename.
+- `mod`: This is a builtin type to assign to [modules](../modules.md) imported from other files or libraries.
+- `pub`: This keyword allows you to export symbols from a [module](../modules.md) to be used in other places.
 
 ## Operators
 

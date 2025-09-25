@@ -2,7 +2,8 @@
 
 ## `fprint()`
 
-This is a function that takes in a file as the first input and a string as the second input, and writes that string to the file.
+This is a function that takes in a file as the first input and a string as the
+second input, and writes that string to the file.
 
 ```nc
 fn fprint(file f, str value)
@@ -10,7 +11,9 @@ fn fprint(file f, str value)
 
 ## `print()` and `println()`
 
-These functions call `fprint()` and with the output file set to be `stdout`. The difference between `print()` and `println()` is that `println()` appends a newline at the end of the output.
+These functions call `fprint()` and with the output file set to be `stdout`.
+The difference between `print()` and `println()` is that `println()` appends a
+newline at the end of the output.
 
 ```nc
 fn print(str value) {
@@ -23,7 +26,10 @@ fn println(str value) {
 
 ## `eprint()` and `eprintln()`
 
-These functions call `fprint()` and with the output file set to be `stderr`. The difference between `eprint()` and `eprintln()` is that `eprintln()` appends a newline at the end of the output. These functions are generally used for print debugging.
+These functions call `fprint()` and with the output file set to be `stderr`.
+The difference between `eprint()` and `eprintln()` is that `eprintln()` appends
+a newline at the end of the output. These functions are generally used for
+print debugging.
 
 ```nc
 fn eprint(str value) {
@@ -44,7 +50,10 @@ fn typeof(value) -> type
 
 ## `assert()`
 
-This is a function that takes in a boolean as the first argument, and optionally a string as the second argument. If the boolean is false, it halts the program with an assertion error and a stacktrace, and the string as an error message.
+This is a function that takes in a boolean as the first argument, and
+optionally a string as the second argument. If the boolean is false, it halts
+the program with an assertion error and a stacktrace, and the string as an
+error message.
 
 ```nc
 fn assert(bool check, str message) -> ! {
@@ -80,7 +89,11 @@ There are functions to cast a value into a different type:
 - `int()`, `uint()`, `bigint()`
 - `str()`
 
-If you define a type of your own, you need to define these functions for that type if you'd like to be able to convert into them. This is especially important for `str()`, as you need to define it in order to print the value out using the [`print()`](#print-and-println) and [`eprint()`](#eprint-and-eprintln) functions above.
+If you define a type of your own, you need to define these functions for that
+type if you'd like to be able to convert into them. This is especially
+important for `str()`, as you need to define it in order to print the value out
+using the [`print()`](#print-and-println) and
+[`eprint()`](#eprint-and-eprintln) functions above.
 
 ## `new()`
 
@@ -102,4 +115,15 @@ The value created with `new` will be the "zero" value of that type:
 - `struct`: A struct with the zero values of its constituent types
 - `tuple`: A tuple with the zero values of its constituent types
 
-Generally, you should define your own `new()` functions for your types and use those instead of relying on the built-in zero value definitions.
+Generally, you should define your own `new()` functions for your types and use
+those instead of relying on the built-in zero value definitions.
+
+## `import()`
+
+This function allows you to import modules from other files, dependencies, or
+the standard library. They can then be assigned to a `mod` variable and used in
+the code.
+
+```nc
+mod math = import("std/math")
+```
