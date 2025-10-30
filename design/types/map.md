@@ -46,4 +46,4 @@ for key in myMap {
 // string11 11.0
 ```
 
-Maps are implemented using [Swiss tables](https://abseil.io/about/design/swisstables) for high read/write performance.
+Maps are implemented using [Swiss tables](https://abseil.io/about/design/swisstables) for high read/write performance. Note that the implementation may change later, and so you should generally not rely on the order that the entries are stored in, or the implementation details in any way.
