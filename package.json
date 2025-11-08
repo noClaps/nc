@@ -5,7 +5,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@shikijs/types": "^3.13.0",
+    "@shikijs/types": "^3.15.0",
     "markdown-it-mathjax3": "^5.2.0",
     "vitepress": "^1.6.4"
   },
