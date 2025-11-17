@@ -15,7 +15,7 @@ Members of a struct can be accessed with `<struct>.<member>`, and you can loop o
 
 ```nc
 for mem, val in myFrac {
-  print(mem, val)
+  print("{mem} {val}")
 }
 // prints:
 // numerator 10

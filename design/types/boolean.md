@@ -7,4 +7,13 @@ bool isLangCool = true
 bool isLangLame = false
 ```
 
+This makes a boolean effectively an enum:
+
+```
+enum bool {
+  true,
+  false
+}
+```
+
 Internally, these are represented by a single 8-bit byte, that can be either `0` (false) or `1` (true).

@@ -1,6 +1,12 @@
 # String
 
-Strings are defined as an array of [characters](./character). Of course, this is all internal, and they will be represented to you as `"string"`. However, this will allow you to access the length of the string with `<string>.len`.
+Strings are defined as an array of [characters](./character):
+
+```nc
+type string = char[]
+```
+
+Of course, this is all internal, and they will be represented to you as `"string"`. However, this will allow you to access the length of the string with `<string>.len`.
 
 ```nc
 str myString = "cookie 🍪"

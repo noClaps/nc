@@ -2,7 +2,7 @@
 
 ## Int
 
-The `int` type will be a 64-bit signed integer type. There will also be a `uint` which will be a 64-bit unsigned integer.
+The `int` type is a 64-bit signed integer type.
 
 You can declare `int`s by simply writing a number without a decimal point, or converting from a different type by using the `int()` function:
 
@@ -13,7 +13,7 @@ int myNum = int(1)
 
 ## Uint
 
-A `uint` can be declared similarly to an `int`, and the `uint()` function can be called to convert from a different type:
+The `uint` type is a 64-bit unsigned integer. A `uint` can be declared similarly to an `int`, and the `uint()` function can be called to convert from a different type:
 
 ```nc
 uint myNum = 1 // cannot be negative
@@ -26,7 +26,7 @@ If a value exceeds the range of `int` or `uint`, the program will panic and cras
 
 ## BigInt
 
-There will also be an arbitrary-precision integer type called `bigint`, which will be incompatible with the other `int` types, and will be slower. You can convert between `bigint` and `int`, but operations must be between the same type, e.g. you cannot add a `bigint` and an `int`. Converting from `bigint` to `int` will cap the value at the 64-bit signed integer limits.
+There is also an arbitrary-precision integer type called `bigint`, which will be incompatible with the other `int` types, and will be slower. You can convert between `bigint` and `int`, but operations must be between the same type, e.g. you cannot add a `bigint` and an `int`. Converting from `bigint` to `int` will cap the value at the 64-bit signed integer limits.
 
 You can declare a `bigint` by calling the `bigint()` function to convert it from a different type, or by simply writing the number:
 
