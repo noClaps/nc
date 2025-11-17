@@ -2,8 +2,7 @@
 
 ## Conditionals
 
-- `if`, `else if`, `else`: These are used for [basic conditionals](../conditionals/if-else).
-- `match`, `else`: These are used for [pattern matching](../conditionals/pattern-matching).
+- `if`, `else`: These are used for [conditionals](../conditionals).
 
 ## Functions
 
@@ -50,4 +49,4 @@
 
 ## Other
 
-- `return`: This is used to return values from a block. This can be returning values from a function, or returning a value from a conditional block into a variable, like an `if-else` statement or `match` statement.
+- `return`: This is used to return values from a function.

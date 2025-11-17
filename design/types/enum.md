@@ -14,7 +14,7 @@ You can access enum members with `<enum>.<member>`. You can then use this in you
 
 ```nc
 fn checkStatus(Status st) -> str {
-  match st {
+  if st {
     Pending -> { return "pending" }
     Complete -> { return "complete" }
     Failed -> { return "failed" }
@@ -54,11 +54,17 @@ for row in board {
     // ...
 
     mut int aliveNeighbors = 0
-    if north == CellState.Alive { aliveNeighbors += 1 }
-    if northeast == CellState.Alive { aliveNeighbors += 1 }
+    if north {
+      CellState.Alive -> { aliveNeighbors += 1 }
+      else -> {}
+    }
+    if northeast {
+      CellState.Alive -> { aliveNeighbors += 1 }
+      else -> {}
+    }
     // ...
 
-    match aliveNeighbors {
+    if aliveNeighbors {
       $:1 -> { board[row][col] = CellState.Dead }
       4:$ -> { board[row][col] = CellState.Dead }
       3 -> { board[row][col] = CellState.Alive }

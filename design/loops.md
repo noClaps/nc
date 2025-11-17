@@ -43,7 +43,7 @@ rows: for row in table {
   for col in table[row] {
     int val = table[row][col]
 
-    match val {
+    if val {
       2 -> { continue } // This will skip to the next value in the inner loop
       3 -> { break } // This will break out of the inner loop
       5 -> { continue :rows } // This will skip to the next value in the outer loop

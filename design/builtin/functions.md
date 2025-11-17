@@ -57,13 +57,15 @@ error message.
 
 ```nc
 fn assert(bool check, str message) -> ! {
-  if not check {
-    panic("ERROR: {message}")
+  if check {
+    false -> { panic("ERROR: {message}") }
+    else -> {}
   }
 }
 fn assert(bool check) -> ! {
-  if not check {
-    panic("ERROR: Assertion failed")
+  if check {
+    false -> { panic("ERROR: Assertion failed") }
+    else -> {}
   }
 }
 ```

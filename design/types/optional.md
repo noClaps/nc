@@ -10,12 +10,13 @@ However, this will not be directly compatible with the regular type, and so a ch
 
 ```nc
 fn optAddNum(int a, int? b) -> int {
-  if b == none {
-    return a
+  if b {
+    none -> { return a }
+    else -> {
+      // type of b is now `int` since the none case was handled above
+      return a + b  
+    }
   }
-
-  // type of b is now `int` since the none case was handled above
-  return a + b
 }
 ```
 

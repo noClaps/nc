@@ -23,6 +23,7 @@ export default defineConfig({
         items: [
           { text: "Async", link: "/async" },
           { text: "Comments", link: "/comments" },
+          { text: "Conditionals", link: "/conditionals" },
           { text: "Loops", link: "/loops" },
           { text: "Modules", link: "/modules" },
           { text: "Operators", link: "/operators" },
@@ -33,14 +34,6 @@ export default defineConfig({
             items: [
               { text: "Functions", link: "/functions" },
               { text: "Keywords", link: "/keywords" },
-            ],
-          },
-          {
-            text: "Conditionals",
-            base: "/design/conditionals",
-            items: [
-              { text: "If-else statements", link: "/if-else" },
-              { text: "Pattern matching", link: "/pattern-matching" },
             ],
           },
           {

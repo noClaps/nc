@@ -5,10 +5,9 @@ If a function throws an error, it must be declared in the function definition wi
 ```nc
 fn addThrows(int a, int b) -> int! {
   if a < b {
-    panic("first argument cannot be less than second argument")
+    true -> { panic("first argument cannot be less than second argument") }
+    else -> { return a + b }
   }
-
-  return a + b
 }
 ```
 
@@ -25,8 +24,9 @@ Any function that calls another function marked with `try` must itself be declar
 
 ```nc
 fn calc(int a, int b, str op) -> int! { // marked as throwing
-  match op {
+  if op {
     "+" -> { return try addThrows(a, b) }
+    else -> { panic("Invalid operation") }
   }
 }
 ```
@@ -35,8 +35,9 @@ If a function throws but does not return anything, it can be marked as throwing 
 
 ```nc
 fn isValid(str source, str check) -> ! { // marked as throwing without return value
-  if source != check {
-    panic("Not valid")
+  if source {
+    check -> {}
+    else -> { panic("Not valid") }
   }
 }
 ```
@@ -46,10 +47,9 @@ Functions that throw will immediately exit out of the program if they error. If 
 ```nc
 fn addError(int a, int b) -> (int, error) {
   if a < b {
-    return 0, error("first argument cannot be less than second argument")
+    true -> { return 0, error("first argument cannot be less than second argument") }
+    else -> { return a + b, none }
   }
-
-  return a + b, none
 }
 
 // the error goes into the `err` variable, but you can name this whatever you'd like
@@ -65,11 +65,12 @@ Alternatively, you can handle the error inside the function, and simply return `
 ```nc
 fn addOpt(int a, int b) -> int? {
   if a < b {
-    print("first argument cannot be less than second argument")
-    return none
+    true -> {
+      print("first argument cannot be less than second argument")
+      return none
+    }
+    else -> { return a + b }
   }
-
-  return a + b
 }
 
 int? c = addOpt(3, 5)
