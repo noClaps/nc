@@ -91,8 +91,8 @@ mod complex {
 
   pub fn add(Complex a, Complex b) -> Complex {
     return {
-      .real: a.real + b.real,
-      .imag: a.imag + b.imag
+      .real = a.real + b.real,
+      .imag = a.imag + b.imag
     }
   }
 }
