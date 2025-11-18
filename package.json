@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@shikijs/types": "^3.15.0",
-    "markdown-it-mathjax3": "^5.2.0",
+    "markdown-it-mathjax3": "^4.3.2",
     "vitepress": "^1.6.4"
   },
   "type": "module"
