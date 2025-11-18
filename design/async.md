@@ -22,7 +22,7 @@ fn someFunction() -> int {
 }
 
 fn main() {
-  int* result = someFunction() // start executing the function here
+  int* result = async someFunction() // start executing the function here
 
   // do some other work while `someFunction` runs in the background
 
