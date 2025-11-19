@@ -27,6 +27,7 @@ export default defineConfig({
           { text: "Loops", link: "/loops" },
           { text: "Modules", link: "/modules" },
           { text: "Operators", link: "/operators" },
+          { text: "Testing", link: "/testing" },
           { text: "Variables", link: "/variables" },
           {
             text: "Builtin",

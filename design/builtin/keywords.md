@@ -47,6 +47,10 @@
 - `async`: This marks a function call as asynchronous, and returns a Future. See [async](../async) for details.
 - `await`: This awaits a Future to block execution until it resolves and gets a value out. See [async](../async) for details.
 
+## Testing
+
+- `test`: This keyword allows you to define [tests](../testing) for your code.
+
 ## Other
 
 - `return`: This is used to return values from a function.
