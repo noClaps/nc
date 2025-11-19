@@ -120,16 +120,6 @@ The value created with `new` will be the "zero" value of that type:
 Generally, you should define your own `new()` functions for your types and use
 those instead of relying on the built-in zero value definitions.
 
-## `import()`
-
-This function allows you to import modules from other files, dependencies, or
-the standard library. They can then be assigned to a `mod` variable and used in
-the code.
-
-```nc
-mod math = import("std/math")
-```
-
 ## `asm()`
 
 This function allows you to write inline assembly in NC. Keep in mind that while the rest of the language is memory-safe, there are no such guarantees for any assembly code you may write or import from libraries using this function.

@@ -33,7 +33,7 @@
 
 ## Modules
 
-- `mod`: This is a builtin type to assign to [modules](../modules.md) imported from other files or libraries.
+- `import`, `as`: This keyword allows you to import symbols from [modules](../modules.md) such as other files or libraries, and assign them to a given module name.
 - `pub`: This keyword allows you to export symbols from a [module](../modules.md) to be used in other places.
 
 ## Operators

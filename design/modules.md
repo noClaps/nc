@@ -1,30 +1,22 @@
 # Import statements
 
-Import statements import the whole module and assign it to a variable. Specific
-things from the module cannot be imported, such as JavaScript's `import {
-function } from pkg` or Python's `from pkg import function`. Wildcard imports
-like Python's `from pkg import *` are also not allowed.
+Import statements import the whole module and assign it to a variable. Specific things from the module cannot be imported, such as JavaScript's `import { function } from pkg` or Python's `from pkg import function`. Wildcard imports like Python's `from pkg import *` are also not allowed.
 
 ```nc
-mod math = import("std/math")
+import "std/math" as math
 
 decimal phi = (math.sqrt(5) + 1) / 2
 ```
 
-This is beneficial because different modules can export functions with the same
-name, and it'll always be clear where each function came from, at the cost of
-typing slightly more.
+This is beneficial because different modules can export functions with the same name, and it'll always be clear where each function came from, at the cost of typing slightly more.
 
-Each file is a module, and you can import from files by calling the `import()`
-function and assigning the value to a variable of type `mod`:
+Each file is a module, and you can import from files by using the `import` keyword, and assign it to a variable with `as`.
 
 ```nc
-mod someMod = import("path/to/mod")
+import "path/to/mod" as someMod
 ```
 
-The `mod` type is a special struct containing all of the exported symbols from
-a module, along with their (non-exported) dependencies. This is useful, for
-instance, if an exported function has side effects. For example:
+This variable is a special struct containing all of the exported symbols from a module, along with their (non-exported) dependencies. This is useful, for instance, if an exported function has side effects. For example:
 
 ```nc
 // std/math
@@ -52,7 +44,7 @@ pub fn randomLCG() -> int {
 would get turned into:
 
 ```nc
-mod {
+module {
   pub decimal PI = 3.14159265358979323
 
   pub uint MIN_UINT = 0
@@ -72,34 +64,12 @@ mod {
 You would then be able to use this as:
 
 ```nc
-mod math = import("std/math")
+import "std/math" as math
 
 println("pi = {math.PI}") // pi = 3.14159265358979323
 println("{math.MIN_UINT} <= uint <= {math.MAX_UINT}") // 0 <= uint <= ...
 println(randomLCG()) // 69376
 ```
-
-You can also write these `mod` structs yourself, simply by declaring
-`mod <name>`. For example:
-
-```nc
-mod complex {
-  pub struct Complex {
-    pub decimal real,
-    pub decimal imag
-  }
-
-  pub fn add(Complex a, Complex b) -> Complex {
-    return {
-      .real = a.real + b.real,
-      .imag = a.imag + b.imag
-    }
-  }
-}
-```
-
-Inside a module, you can write code as usual, and it will be automatically
-converted into its struct representation during compilation.
 
 ## Exporting symbols
 
