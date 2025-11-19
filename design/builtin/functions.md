@@ -59,13 +59,13 @@ error message.
 fn assert(bool check, str message) -> ! {
   if check {
     false -> { panic("ERROR: {message}") }
-    else -> {}
+    _ -> {}
   }
 }
 fn assert(bool check) -> ! {
   if check {
     false -> { panic("ERROR: Assertion failed") }
-    else -> {}
+    _ -> {}
   }
 }
 ```

@@ -2,7 +2,7 @@
 
 ## Conditionals
 
-- `if`, `else`: These are used for [conditionals](../conditionals).
+- `if`: These are used for [conditionals](../conditionals).
 
 ## Functions
 

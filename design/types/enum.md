@@ -56,11 +56,11 @@ for row in board {
     mut int aliveNeighbors = 0
     if north {
       CellState.Alive -> { aliveNeighbors += 1 }
-      else -> {}
+      _ -> {}
     }
     if northeast {
       CellState.Alive -> { aliveNeighbors += 1 }
-      else -> {}
+      _ -> {}
     }
     // ...
 
@@ -68,7 +68,7 @@ for row in board {
       $:1 -> { board[row][col] = CellState.Dead }
       4:$ -> { board[row][col] = CellState.Dead }
       3 -> { board[row][col] = CellState.Alive }
-      else -> {}
+      _ -> {}
     }
   }
 }
