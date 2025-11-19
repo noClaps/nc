@@ -129,3 +129,13 @@ the code.
 ```nc
 mod math = import("std/math")
 ```
+
+## `asm()`
+
+This function allows you to write inline assembly in NC. Keep in mind that while the rest of the language is memory-safe, there are no such guarantees for any assembly code you may write or import from libraries using this function.
+
+```nc
+asm("""
+; Your assembly code here
+""")
+```
