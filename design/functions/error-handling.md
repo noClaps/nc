@@ -54,7 +54,7 @@ fn addError(int a, int b) -> (int, error) {
 
 // the error goes into the `err` variable, but you can name this whatever you'd like
 int c = addError(3, 5) catch err {
-  print(err)
+  eprint("{err}")
 }
 
 // `c` is of type `int` here

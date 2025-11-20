@@ -4,11 +4,11 @@
 
 ```nc
 for i in 1:20 {
-  print(i) // Prints 1, 2, 3, ..., 20
+  print("{i}") // Prints 1, 2, 3, ..., 20
 }
 
 for j in 1:2:20 { // You can increment/decrement by other values
-  print(j) // Prints 1, 3, 5, ..., 19
+  print("{j}") // Prints 1, 3, 5, ..., 19
 }
 ```
 
@@ -51,7 +51,7 @@ rows: for row in table {
       else -> {}
     }
 
-    print(val)
+    print("{val}")
   }
 }
 

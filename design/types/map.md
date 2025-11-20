@@ -31,7 +31,7 @@ You can use a `for` loop to loop through the keys and values of a map:
 
 ```nc
 for key in myMap {
-  print(key, myMap[key])
+  print("{key} {myMap[key]}")
 }
 // string1 1.0
 // string2 2.0

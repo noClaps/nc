@@ -29,7 +29,7 @@ Status stat1 = Status.Complete
 Status stat2 = Status.Failed
 
 print(checkStatus(stat1)) // complete
-print(didFail(stat2)) // true
+print("{didFail(stat2)}") // true
 ```
 
 Enums allow you to define different states of an object. For example, if you were making Conway's Game of Life, you may want to encode the cell state using an enum instead of a boolean, for clarity:

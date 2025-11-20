@@ -12,7 +12,7 @@ Of course, this is all internal, and they will be represented to you as `"string
 str myString = "cookie 🍪"
 
 for i in myString {
-  print(myString[i])
+  print("{myString[i]}")
 }
 // c
 // o
