@@ -12,7 +12,7 @@ However, this will not be directly compatible with the regular type, and so a ch
 fn optAddNum(int a, int? b) -> int {
   if b {
     none -> { return a }
-    _ -> {
+    else -> {
       // type of b is now `int` since the none case was handled above
       return a + b  
     }

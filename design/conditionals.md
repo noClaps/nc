@@ -20,7 +20,7 @@ decimal pi = 3.14
 
 if pi {
   3.14 -> { print("Pi is (approximately) correct") }
-  _ -> { print("Pi is probably wrong!") }
+  else -> { print("Pi is probably wrong!") }
 }
 ```
 
@@ -37,7 +37,7 @@ bool isBirthday = true
 
 if isBirthday {
   true -> { print("Happy birthday!") }
-  _ -> {}
+  else -> {}
 }
 ```
 
@@ -57,7 +57,7 @@ if animal {
   "Cat" -> { print("Meow!") }
   "Mouse" -> { print("Squeek!") }
   checkIfAnimal("Bird") -> { print("Chirp!") } // calls checkIfAnimal(animal, "Bird")
-  _ -> { print("Not a recognised pet") }
+  else -> { print("Not a recognised pet") }
 }
 ```
 
@@ -72,7 +72,7 @@ char letter = if index {
   1 -> { 'A' }
   2 -> { 'B' }
   5 -> { 'E' }
-  _ -> { 'Z' }
+  else -> { 'Z' }
 }
 
 assert(letter == 'B')
@@ -93,7 +93,7 @@ if num {
     print("Medium number")
   }
   11:$ -> { print("Large number") }
-  _ -> {
+  else -> {
     // unreachable in this case, but since `int` can be negative, this branch
     // needs to exist
   }
@@ -121,54 +121,47 @@ if num {
     // reach here
     print("Medium number")
   }
-  _ -> { print("Large number") }
+  else -> { print("Large number") }
 }
 
 // Small number
 ```
 
-## Tuples and arrays
+## More advanced comparisons
 
-If you'd like to match on a tuple or array, you can use the placeholder `_` to indicate that any value can go there:
+If you'd like to do more advanced comparisons, such as matching on a struct field, or array or tuple element, you can use the `if` keyword without any symbol after it, and that will act as an `if true {}`.
+
+For example, if you'd like to match on a tuple:
 
 ```nc
-(str, int)[] theList = [
-  ("James", 18),
-  ("John", 21),
-  ("Nathan", 22),
-  ("Aiden", 19)
-]
+(str, int) person = ("Alex", 22)
 
-for i in theList {
-  if theList[i] {
-    (_, 18:$) -> { print("Allowed") }
-    ("Nathan", _) -> { print("Banned") }
-    _ -> { print("Not on the list") }
-  }
+if {
+  person[0] == "Nathan" -> { print("Banned") }
+  person[1] < 18 -> { print("Children not allowed") }
+  else -> { print("Welcome {person[0]}") }
 }
+
+// Welcome Alex
 ```
 
-and similarly for arrays:
+or an array:
 
 ```nc
 int[] values = [1, 2, 3, 4, 5]
 
-if values {
-  [_] -> { print("Length is 1") }
-  [_, _, _, _, _] -> { print("Length is 5") }
-  [_, _, _, _, 10] -> { print("Last value is 10") }
-  [$:-1, _, _, _, _] -> { print("First value is negative") }
-  _ -> { print("All other cases") }
+if {
+  values.len == 1 -> { print("Length is 1") }
+  values.len == 5 -> { print("Length is 5") }
+  values[$] == 10 -> { print("Last value is 10") }
+  values[0] < 0 -> { print("First value is negative") }
+  else -> { print("All other cases") }
 }
+
+// Length is 5
 ```
 
-Note that in the above example, since the order the cases are defined in matters, any array of size 5 will always print `Length is 5`, regardless of whether any cases defined further down match, such as if the first value is negative or if the last value is 10.
-
-Also note that you can use regular pattern matching rules, like using ranges for integer values, even inside arrays or tuples.
-
-## Structs
-
-You can match on structs with their members:
+or a struct:
 
 ```nc
 struct Point {
@@ -179,25 +172,23 @@ struct Point {
 
 Point p = {.x = 3, .y = -4, .z = 5}
 
-match p {
-  {.x = $:-1} -> { print("x-coordinate is negative") }
-  {.x = 0:$, .y = 0:$} -> { print("x- and y-coordinates are positive") }
-  {.z = 5} -> { print("z-coordinate is 5") }
-  _ -> { print("All other cases") }
+if {
+  p.x < 0 -> { print("x-coordinate is negative") }
+  p.x >= 0 and p.y >= 0 -> { print("x- and y-coordinates are positive") }
+  p.z == 5 -> { print("z-coordinate is 5") }
+  else -> { print("All other cases") }
 }
+
+// z-coordinate is 5
 ```
 
-## Variable comparisons
-
-If you'd like to compare the values of two variables, you can use one of the variables as a branch:
+Of course, this works on any conditional, even the ones described in the above sections. Going back to the simple example at the beginning, you can also write it like this:
 
 ```nc
-int a = 1
-int b = 2
+decimal pi = 3.14
 
-if a {
-  b -> { assert(a == b) }
-  1 -> { assert(a == 1) }
-  else -> { assert(a != b and a != 1) }
+if {
+  pi == 3.14 -> { print("Pi is (approximately) correct") }
+  else -> { print("Pi is probably wrong!") }
 }
 ```

@@ -6,7 +6,7 @@ If a function throws an error, it must be declared in the function definition wi
 fn addThrows(int a, int b) -> int! {
   if a < b {
     true -> { panic("first argument cannot be less than second argument") }
-    _ -> { return a + b }
+    else -> { return a + b }
   }
 }
 ```
@@ -26,7 +26,7 @@ Any function that calls another function marked with `try` must itself be declar
 fn calc(int a, int b, str op) -> int! { // marked as throwing
   if op {
     "+" -> { return try addThrows(a, b) }
-    _ -> { panic("Invalid operation") }
+    else -> { panic("Invalid operation") }
   }
 }
 ```
@@ -37,7 +37,7 @@ If a function throws but does not return anything, it can be marked as throwing 
 fn isValid(str source, str check) -> ! { // marked as throwing without return value
   if source {
     check -> {}
-    _ -> { panic("Not valid") }
+    else -> { panic("Not valid") }
   }
 }
 ```
@@ -48,7 +48,7 @@ Functions that throw will immediately exit out of the program if they error. If 
 fn addError(int a, int b) -> (int, error) {
   if a < b {
     true -> { return 0, error("first argument cannot be less than second argument") }
-    _ -> { return a + b, none }
+    else -> { return a + b, none }
   }
 }
 
@@ -69,7 +69,7 @@ fn addOpt(int a, int b) -> int? {
       print("first argument cannot be less than second argument")
       return none
     }
-    _ -> { return a + b }
+    else -> { return a + b }
   }
 }
 
