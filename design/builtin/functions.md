@@ -40,14 +40,6 @@ fn eprintln(str value) {
 }
 ```
 
-## `typeof()`
-
-This returns the type of a value.
-
-```nc
-fn typeof(value) -> type
-```
-
 ## `assert()`
 
 This is a function that takes in a boolean as the first argument, and
