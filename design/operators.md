@@ -190,7 +190,7 @@ Bit arithmetic will only be allowed for integers.
 
 ```nc
 // bitwise not
-~6 == -7
+!6 == -7
 ```
 
 ## Pipes
