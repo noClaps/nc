@@ -77,11 +77,10 @@ monthsToNum <> differentType // error: cannot concatenate maps of different type
 
 Multiplication is apparently a very difficult problem to try and solve. Luckily, a lot of smart people have already solved the problem of multiplying large numbers efficiently. We can use something similar to implementations in other languages, as detailed in [this video](https://www.youtube.com/watch?v=AMl6EJHfUWo), though it's also worth exploring some of the newer algorithms to see if they're performant enough to be worth implementing.
 
-::: info NOTE
-In case the video gets taken down, my main takeaway from that video was to use normal long multiplication for smaller numbers ($O(n^2)$), and Karatsuba's algorithm ($O(n^{\log_2 3})$) for larger ones. There are also the Toom-Cook ($O(n^\frac{\log(2k-1)}{\log k}) \text{ for any } k \ge 2$) and Schönhage-Strassen ($O(n \log n \log \log n)$) algorithms which are more efficient, though likely with some tradeoffs.
+!!! note
+    In case the video gets taken down, my main takeaway from that video was to use normal long multiplication for smaller numbers ($O(n^2)$), and Karatsuba's algorithm ($O(n^{\log_2 3})$) for larger ones. There are also the Toom-Cook ($O(n^\frac{\log(2k-1)}{\log k}) \text{ for any } k \ge 2$) and Schönhage-Strassen ($O(n \log n \log \log n)$) algorithms which are more efficient, though likely with some tradeoffs.
 
-The more modern/complex algorithms are Fürer ($O(n \log n \cdot 2^{\Theta(\log^* n)})$) and Harvey-Hoeven ($O(n \log n)$). These are theoretically the most efficient algorithms, though it seems like their constants are simply too large to be feasible.
-:::
+    The more modern/complex algorithms are Fürer ($O(n \log n \cdot 2^{\Theta(\log^* n)})$) and Harvey-Hoeven ($O(n \log n)$). These are theoretically the most efficient algorithms, though it seems like their constants are simply too large to be feasible.
 
 The combination of algorithms being used for multiplication, as well as the thresholds at which the switch from one algorithm to another, will need to be explored and tested to find the best combinations.
 

@@ -20,9 +20,8 @@ uint myNum = 1 // cannot be negative
 uint myNum = uint(1) // equivalent to the above expression
 ```
 
-::: warning
-If a value exceeds the range of `int` or `uint`, the program will panic and crash.
-:::
+!!! warning
+    If a value exceeds the range of `int` or `uint`, the program will panic and crash.
 
 ## BigInt
 
